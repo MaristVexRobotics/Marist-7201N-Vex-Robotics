@@ -1,4 +1,14 @@
 Marist-7201P-Vex-Robotics
 =========================
 
-Marist 7201P Github Repo
+Programmers
+=========================
+Matt Haidet and
+Nick Oyebanji
+
+Rules
+========================
+This reposistory is only for code.
+
+
+
