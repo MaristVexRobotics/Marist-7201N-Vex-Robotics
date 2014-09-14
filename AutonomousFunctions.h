@@ -5,24 +5,24 @@
 #include "constants.h"
 
 void linearMove(int power){
-LEFT_BACK =	power;
-RIGHT_BACK = power;
-LEFT_FRONT = power;
-RIGHT_FRONT = power;
+	LEFT_BACK =	power;
+	RIGHT_BACK = power;
+	LEFT_FRONT = power;
+	RIGHT_FRONT = power;
 }
 
 void turnInPlace(const string direction, int power){
-if(direction == "clockWise"){
-power = -power;
-}
-LEFT_BACK =	-power;
-RIGHT_BACK = -power;
-LEFT_FRONT = power;
-RIGHT_FRONT = power;
+	if(direction == "clockWise"){
+		power = -power;
+	}
+	LEFT_BACK =	-power;
+	RIGHT_BACK = -power;
+	LEFT_FRONT = power;
+	RIGHT_FRONT = power;
 }
 
 void waitForTruth(bool truth){
-while(!truth){
-wait1Msec(1);
-}
+	while(!truth){
+		wait1Msec(1);
+	}
 }

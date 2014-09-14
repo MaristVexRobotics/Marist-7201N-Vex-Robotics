@@ -13,7 +13,7 @@
 
 void pre_auton()
 {
-  bStopTasksBetweenModes = true;
+	bStopTasksBetweenModes = true;
 }
 
 task autonomous()
@@ -29,6 +29,6 @@ task usercontrol()
 
 	while (true)
 	{
-	  UserControlCodePlaceholderForTesting();
+		UserControlCodePlaceholderForTesting();
 	}
 }
