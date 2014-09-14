@@ -9,6 +9,7 @@
 #pragma userControlDuration(120)
 #include "Vex_Competition_Includes.c"
 #include "AutonomousFunctions.h"
+#include "constants.h"
 
 void pre_auton()
 {

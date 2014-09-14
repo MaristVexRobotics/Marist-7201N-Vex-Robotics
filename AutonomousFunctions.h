@@ -2,22 +2,23 @@
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
 #pragma config(Motor,  port10,          backRight,     tmotorVex393, openLoop, reversed)
+#include "constants.h"
 
 void linearMove(int power){
-motor[backLeft] =	power;
-motor[backRight] = power;
-motor[frontLeft] = power;
-motor[frontRight] = power;
+LEFT_BACK =	power;
+RIGHT_BACK = power;
+LEFT_FRONT = power;
+RIGHT_FRONT = power;
 }
 
 void turnInPlace(const string direction, int power){
 if(direction == "clockWise"){
 power = -power;
 }
-motor[backLeft] =	-power;
-motor[backRight] = -power;
-motor[frontLeft] = power;
-motor[frontRight] = power;
+LEFT_BACK =	-power;
+RIGHT_BACK = -power;
+LEFT_FRONT = power;
+RIGHT_FRONT = power;
 }
 
 void waitForTruth(bool truth){
