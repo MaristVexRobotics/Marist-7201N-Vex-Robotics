@@ -4,6 +4,27 @@
 #pragma config(Motor,  port10,          backRight,     tmotorVex393, openLoop, reversed)
 #include "constants.h"
 
-void move(){
+void driver1(const string driver){
+switch(driver)
 
+case "Defualt"
+DefualtDriver();
+break;
+
+
+}
+
+void driver2(){
+
+
+}
+
+
+//Custom Driver Code
+
+void DefualtDriver(){
+LEFT_BACK = vexRT[Ch2];
+LEFT_FRONT = vexRT[Ch2];
+RIGHT_BACK = vexRT[Ch3];
+RIGHT_FRONT = vexRT[Ch3];
 }
