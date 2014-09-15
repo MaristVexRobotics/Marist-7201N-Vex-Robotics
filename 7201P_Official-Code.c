@@ -10,6 +10,7 @@
 #include "Vex_Competition_Includes.c"
 #include "AutonomousFunctions.h"
 #include "constants.h"
+#include "DriverFunctions.h"
 
 void pre_auton()
 {
@@ -20,8 +21,6 @@ task autonomous()
 {
 	turnInPlace("clockWise", 100);
 	wait1Msec(3000);
-
-	AutonomousCodePlaceholderForTesting();
 }
 
 task usercontrol()
@@ -29,6 +28,6 @@ task usercontrol()
 
 	while (true)
 	{
-		UserControlCodePlaceholderForTesting();
+
 	}
 }

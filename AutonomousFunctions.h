@@ -2,6 +2,7 @@
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
 #pragma config(Motor,  port10,          backRight,     tmotorVex393, openLoop, reversed)
+
 #include "constants.h"
 
 void linearMove(int power){
@@ -20,6 +21,20 @@ void turnInPlace(const string direction, int power){
 	LEFT_FRONT = power;
 	RIGHT_FRONT = power;
 }
+
+void turnForSeconds(const String direction, float seconds, int power){
+
+}
+
+void turnDegrees(const string direction, float degrees, int power){
+
+}
+
+void moveInLineForSeconds(const string direction, int power){
+
+}
+
+
 
 void waitForTruth(bool truth){
 	while(!truth){
