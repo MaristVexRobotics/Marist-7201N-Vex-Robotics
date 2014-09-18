@@ -6,25 +6,9 @@
 
 //Custom Driver Code
 
-void DefualtDriver(){
+void drive(){
 LEFT_BACK = vexRT[Ch2];
 LEFT_FRONT = vexRT[Ch2];
 RIGHT_BACK = vexRT[Ch3];
 RIGHT_FRONT = vexRT[Ch3];
-}
-
-void driver1(const string driver){
-switch(driver){
-
-case "Defualt":
-DefualtDriver();
-break;
-
-}
-
-}
-
-void driver2(){
-
-
 }
