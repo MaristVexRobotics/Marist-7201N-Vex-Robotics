@@ -12,7 +12,7 @@ void linearMove(int power){
 }
 
 void turnInPlace(const string direction, int power){
-	if(direction == "clockWise"){
+	if(direction == "right"){
 		power = -power;
 	}
 	LEFT_BACK =	-power;
@@ -22,6 +22,17 @@ void turnInPlace(const string direction, int power){
 }
 
 void turnForSeconds(const string direction, float seconds, int power){
+
+	if(direction == "right") {
+
+		Left_B
+
+
+  }
+
+}
+
+
 
 }
 
