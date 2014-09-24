@@ -63,6 +63,7 @@ void turnForSeconds(const string direction, float seconds, int power){
 
 	if(direction == "right") {
 
+<<<<<<< HEAD
 
 		LEFT_BACK = -power;
 		LEFT_FRONT = -power;
@@ -71,6 +72,9 @@ void turnForSeconds(const string direction, float seconds, int power){
 
 
   }
+=======
+	 }
+>>>>>>> origin/master
 
   if(direction == "left") {
 
@@ -83,7 +87,6 @@ void turnForSeconds(const string direction, float seconds, int power){
 
 
 
-}
 
 void turnDegrees(const string direction, float degrees, int power){
 

@@ -1,7 +1,4 @@
 
-//LCD selector Code
-
-
 int getSelectionNumber(){
 return NULL;
 }

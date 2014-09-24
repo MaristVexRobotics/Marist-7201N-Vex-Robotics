@@ -7,8 +7,8 @@
 //Custom Driver Code
 
 void drive(){
-LEFT_BACK = vexRT[Ch2];
-LEFT_FRONT = vexRT[Ch2];
-RIGHT_BACK = vexRT[Ch3];
-RIGHT_FRONT = vexRT[Ch3];
+LEFT_BACK = rightYStick;
+LEFT_FRONT = rightYStick;
+RIGHT_BACK = leftYStick;
+RIGHT_FRONT = leftYStick;
 }
