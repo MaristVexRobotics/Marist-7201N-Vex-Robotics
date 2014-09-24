@@ -22,6 +22,10 @@ Matt Haidet
 #define RIGHT_FRONT motor[frontRight]
 #define RIGHT_BACK motor[backRight]
 
+//Sensors:
+
+
+
 //Controller:
 #define rightXStick vexRT[Ch1]
 #define rightYStick vexRT[Ch2]

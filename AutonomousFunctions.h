@@ -25,16 +25,12 @@ void turnForSeconds(const string direction, float seconds, int power){
 
 	if(direction == "right") {
 
-		Left_B
-
-
-  }
+	 }
 
 }
 
 
 
-}
 
 void turnDegrees(const string direction, float degrees, int power){
 
