@@ -7,8 +7,15 @@
 //Custom Driver Code
 
 void drive(){
-LEFT_BACK = rightYStick;
-LEFT_FRONT = rightYStick;
-RIGHT_BACK = leftYStick;
-RIGHT_FRONT = leftYStick;
+LEFT_BACK = leftYStick + leftUpBumper*127;
+LEFT_FRONT = leftYStick - leftUpBumper*127;
+RIGHT_BACK = rightYStick + rightUpBumper*127;
+RIGHT_FRONT = rightYStick - rightUpBumper*127;
+}
+
+void partner(){
+
+
+
+
 }
