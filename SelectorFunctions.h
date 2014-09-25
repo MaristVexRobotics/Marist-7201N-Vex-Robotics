@@ -1,6 +1,7 @@
+#pragma config(Sensor, in1,    selector,       sensorAnalog)
 
 int getSelectionNumber(){
-return NULL;
+
 }
 
 

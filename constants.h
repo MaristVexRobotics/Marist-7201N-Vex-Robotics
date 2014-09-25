@@ -1,3 +1,4 @@
+#pragma config(Sensor, in1,    selector,       sensorAnalog)
 #pragma config(Motor,  port1,           backLeft,      tmotorVex393, openLoop)
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
@@ -28,7 +29,7 @@ Matt Haidet
 #define RIGHT_CLAW_MOTOR1
 #define LEFT_CLAW_MOTOR2
 //Sensors:
-
+#define selector SensorValue(selector)
 
 
 //Controller:
