@@ -4,7 +4,6 @@
 #pragma config(Motor,  port10,          backRight,     tmotorVex393, openLoop, reversed)
 
 
-//Custom Driver Code
 
 void drive(){
 LEFT_BACK = leftYStick + leftUpBumper*127;
@@ -14,7 +13,6 @@ RIGHT_FRONT = rightYStick - rightUpBumper*127;
 }
 
 void partner(){
-
 
 
 

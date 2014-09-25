@@ -48,7 +48,7 @@ linearMove(0);
 void leftMoveTime(int power, int mSecs) {
 	linearMove(power);
 	wait1Msec(mSecs);
-	linerMove(0);
+	linearMove(0);
 
 }
 
@@ -62,9 +62,6 @@ void rightMoveTime(int power, int mSecs) {
 void turnForSeconds(const string direction, float seconds, int power){
 
 	if(direction == "right") {
-
-<<<<<<< HEAD
-
 		LEFT_BACK = -power;
 		LEFT_FRONT = -power;
 		RIGHT_FRONT = power;
@@ -72,9 +69,9 @@ void turnForSeconds(const string direction, float seconds, int power){
 
 
   }
-=======
-	 }
->>>>>>> origin/master
+
+
+
 
   if(direction == "left") {
 
@@ -82,7 +79,7 @@ void turnForSeconds(const string direction, float seconds, int power){
 		LEFT_FRONT = power;
 		RIGHT_FRONT = -power;
 		RIGHT_BACK = -power;
-
+}
 }
 
 
