@@ -21,7 +21,12 @@ Matt Haidet
 #define LEFT_BACK motor[backLeft]
 #define RIGHT_FRONT motor[frontRight]
 #define RIGHT_BACK motor[backRight]
-
+#define RIGHT_LIFT_MOTOR1
+#define RIGHT_LIFT_MOTOR2
+#define LEFT_LIFT_MOTOR1
+#define LEFT_LIFT_MOTOR2
+#define RIGHT_CLAW_MOTOR1
+#define LEFT_CLAW_MOTOR2
 //Sensors:
 
 
