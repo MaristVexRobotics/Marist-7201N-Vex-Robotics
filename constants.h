@@ -29,7 +29,7 @@ Matt Haidet
 #define RIGHT_CLAW_MOTOR1
 #define LEFT_CLAW_MOTOR2
 //Sensors:
-#define selector SensorValue(selector)
+#define Selector SensorValue(selector)
 
 
 //Controller:
