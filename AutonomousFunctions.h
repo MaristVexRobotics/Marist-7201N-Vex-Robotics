@@ -22,27 +22,27 @@ void turnInPlace(const string direction, int power){
 	}
 
 	if (direction ==  "left") {
-	LEFT_BACK =	-power;
-	RIGHT_BACK = power;
-	LEFT_FRONT = power;
-	RIGHT_FRONT = -power;
-}
+		LEFT_BACK =	-power;
+		RIGHT_BACK = power;
+		LEFT_FRONT = power;
+		RIGHT_FRONT = -power;
+	}
 
 }
 
 //forwardTime
 void forwardTime(int power, int mSecs) {
 
-linearMove(power);
-wait1Msec(mSecs);
-linearMove(0);
+	linearMove(power);
+	wait1Msec(mSecs);
+	linearMove(0);
 
 }
 //backwardTime
 void backwardTime(int power, int mSecs) {
-linearMove(power);
-wait1Msec(mSecs);
-linearMove(0);
+	linearMove(power);
+	wait1Msec(mSecs);
+	linearMove(0);
 
 }
 //leftMoveTime: robot goes horizontally left
@@ -55,9 +55,9 @@ void leftMoveTime(int power, int mSecs) {
 
 //rightMoveTime
 void rightMoveTime(int power, int mSecs) {
-  linearMove(power);
-  wait1Msec(mSecs);
-  linearMove(0);
+	linearMove(power);
+	wait1Msec(mSecs);
+	linearMove(0);
 }
 
 void turnForSeconds(const string direction, float seconds, int power){
@@ -69,18 +69,18 @@ void turnForSeconds(const string direction, float seconds, int power){
 		RIGHT_BACK = power;
 
 
-  }
+	}
 
 
 
 
-  if(direction == "left") {
+	if(direction == "left") {
 
-  	LEFT_BACK = power;
+		LEFT_BACK = power;
 		LEFT_FRONT = power;
 		RIGHT_FRONT = -power;
 		RIGHT_BACK = -power;
-}
+	}
 }
 
 
