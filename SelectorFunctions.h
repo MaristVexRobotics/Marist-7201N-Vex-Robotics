@@ -7,7 +7,7 @@ string text;
 void init(){
 	clearLCDLine(0);
 	clearLCDLine(1);
-bLCDBacklight = true;
+	bLCDBacklight = true;
 }
 
 
@@ -18,25 +18,25 @@ int getSelectionNumber(){
 		} else if(Selector <= 3915 && Selector > 3340){
 		return 2;
 	}
-return 3;
+	return 3;
 }
 
 bool hasSelectionChanged(){
-if(getSelectionNumber() != currentSelection){
-currentSelection = getSelectionNumber();
-return true;
-}
-return false;
+	if(getSelectionNumber() != currentSelection){
+		currentSelection = getSelectionNumber();
+		return true;
+	}
+	return false;
 }
 
 void testSelector(){
-		if(hasSelectionChanged()){
-			text = getSelectionNumber()+1;
-			displayLCDString(0, 0, text);
-		}
+	if(hasSelectionChanged()){
+		text = getSelectionNumber()+1;
+		displayLCDString(0, 0, text);
+	}
 }
 
-void SelectAutonomous(){
+void runAutonomous(){
 	switch(getSelectionNumber()){
 
 	case 0:

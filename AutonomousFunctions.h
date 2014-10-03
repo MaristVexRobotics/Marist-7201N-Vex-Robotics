@@ -67,15 +67,7 @@ void turnForSeconds(const string direction, float seconds, int power){
 		LEFT_FRONT = -power;
 		RIGHT_FRONT = power;
 		RIGHT_BACK = power;
-
-
-	}
-
-
-
-
-	if(direction == "left") {
-
+		}else if(direction == "left") {
 		LEFT_BACK = power;
 		LEFT_FRONT = power;
 		RIGHT_FRONT = -power;
@@ -92,7 +84,6 @@ void turnDegrees(const string direction, float degrees, int power){
 void moveInLineForSeconds(const string direction, int power){
 
 }
-
 
 void waitForTruth(bool truth){
 	while(!truth){
