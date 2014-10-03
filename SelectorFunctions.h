@@ -1,7 +1,16 @@
 #pragma config(Sensor, in1,    selector,       sensorAnalog)
 #include "AutonomousFunctions.h"
 
-string currentSelection;
+int currentSelection;
+string text;
+
+void init(){
+	clearLCDLine(0);
+	clearLCDLine(1);
+bLCDBacklight = true;
+}
+
+
 
 int getSelectionNumber(){
 	if(Selector > 3915){
@@ -20,8 +29,14 @@ return true;
 return false;
 }
 
+void testSelector(){
+		if(hasSelectionChanged()){
+			text = getSelectionNumber()+1;
+			displayLCDString(0, 0, text);
+		}
+}
 
-void AutonomouseSelector(){
+void SelectAutonomous(){
 	switch(getSelectionNumber()){
 
 	case 0:
