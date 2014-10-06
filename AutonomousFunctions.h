@@ -87,6 +87,11 @@ void moveInLineForSeconds(const string direction, int power){
 
 void turnDegrees(const string direction, float degrees, int power){
 
+			turnInPlace(direction, power);
+			//while(SensorValue[
+
+
+
 }
 
 void turnDegrees(const string direction, float degrees, int power){
