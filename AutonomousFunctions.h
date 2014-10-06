@@ -1,8 +1,9 @@
+#pragma config(Sensor, in1,    selector,       sensorAnalog)
 #pragma config(Motor,  port1,           backLeft,      tmotorVex393, openLoop)
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
 #pragma config(Motor,  port10,          backRight,     tmotorVex393, openLoop, reversed)
-#include "constants.h"
+
 
 //linear:  straight  forward, backward in any direction
 void linearMove(int power){
@@ -21,27 +22,27 @@ void turnInPlace(const string direction, int power){
 	}
 
 	if (direction ==  "left") {
-	LEFT_BACK =	-power;
-	RIGHT_BACK = power;
-	LEFT_FRONT = power;
-	RIGHT_FRONT = -power;
-}
+		LEFT_BACK =	-power;
+		RIGHT_BACK = power;
+		LEFT_FRONT = power;
+		RIGHT_FRONT = -power;
+	}
 
 }
 
 //forwardTime
 void forwardTime(int power, int mSecs) {
 
-linearMove(power);
-wait1Msec(mSecs);
-linearMove(0);
+	linearMove(power);
+	wait1Msec(mSecs);
+	linearMove(0);
 
 }
 //backwardTime
 void backwardTime(int power, int mSecs) {
-linearMove(power);
-wait1Msec(mSecs);
-linearMove(0);
+	linearMove(power);
+	wait1Msec(mSecs);
+	linearMove(0);
 
 }
 //leftMoveTime: robot goes horizontally left
@@ -54,9 +55,9 @@ void leftMoveTime(int power, int mSecs) {
 
 //rightMoveTime
 void rightMoveTime(int power, int mSecs) {
-  linearMove(power);
-  wait1Msec(mSecs);
-  linearMove(0);
+	linearMove(power);
+	wait1Msec(mSecs);
+	linearMove(0);
 }
 
 //turn the robot right
@@ -72,25 +73,54 @@ void turnForSeconds(const string direction, float seconds, int power){
 		LEFT_FRONT = -power;
 		RIGHT_FRONT = power;
 		RIGHT_BACK = power;
-
-
-  }
-
-  if(direction == "left") {
-
-  	LEFT_BACK = power;
+		}else if(direction == "left") {
+		LEFT_BACK = power;
 		LEFT_FRONT = power;
 		RIGHT_FRONT = -power;
 		RIGHT_BACK = -power;
+	}
 }
+
+
+<<<<<<< HEAD
+  }
+
+  if(direction == "left") {
+=======
+
+void turnDegrees(const string direction, float degrees, int power){
+
+}
+
+void moveInLineForSeconds(const string direction, int power){
+>>>>>>> origin/master
+
+}
+
+void waitForTruth(bool truth){
+	while(!truth){
+		wait1Msec(1);
+	}
 }
 
 
+//Autonomous Programs
 
+void blueRight(){
 
+<<<<<<< HEAD
 //void turnDegrees(const string direction, float degrees, int power){
+=======
+}
+
+void blueLeft(){
+>>>>>>> origin/master
 
 
+<<<<<<< HEAD
+=======
+void redRight(){
+>>>>>>> origin/master
 
 //}
 
@@ -98,10 +128,10 @@ void turnForSeconds(const string direction, float seconds, int power){
 
 //}
 
+void redLeft(){
 
+}
 
-void waitForTruth(bool truth){
-	while(!truth){
-		wait1Msec(1);
-	}
+void challenge(){
+
 }
