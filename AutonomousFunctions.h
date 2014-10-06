@@ -59,6 +59,12 @@ void rightMoveTime(int power, int mSecs) {
   linearMove(0);
 }
 
+//turn the robot right
+void turnRightTime(int power, int mSecs) {
+	turnInPlace(right, 70
+
+}
+
 void turnForSeconds(const string direction, float seconds, int power){
 
 	if(direction == "right") {
@@ -69,9 +75,6 @@ void turnForSeconds(const string direction, float seconds, int power){
 
 
   }
-
-
-
 
   if(direction == "left") {
 
@@ -85,13 +88,15 @@ void turnForSeconds(const string direction, float seconds, int power){
 
 
 
-void turnDegrees(const string direction, float degrees, int power){
+//void turnDegrees(const string direction, float degrees, int power){
 
-}
 
-void moveInLineForSeconds(const string direction, int power){
 
-}
+//}
+
+//void moveInLineForSeconds(const string direction, int power){
+
+//}
 
 
 
