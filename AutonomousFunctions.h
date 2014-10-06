@@ -62,7 +62,7 @@ void rightMoveTime(int power, int mSecs) {
 
 //turn the robot right
 void turnRightTime(int power, int mSecs) {
-	turnInPlace(right, 70
+//	turnInPlace(right, 70);
 
 }
 
@@ -81,19 +81,20 @@ void turnForSeconds(const string direction, float seconds, int power){
 	}
 }
 
+void moveInLineForSeconds(const string direction, int power){
 
-<<<<<<< HEAD
-  }
+}
 
-  if(direction == "left") {
-=======
+void turnDegrees(const string direction, float degrees, int power){
+
+}
 
 void turnDegrees(const string direction, float degrees, int power){
 
 }
 
 void moveInLineForSeconds(const string direction, int power){
->>>>>>> origin/master
+
 
 }
 
@@ -108,25 +109,18 @@ void waitForTruth(bool truth){
 
 void blueRight(){
 
-<<<<<<< HEAD
-//void turnDegrees(const string direction, float degrees, int power){
-=======
+
+
 }
 
 void blueLeft(){
->>>>>>> origin/master
 
+}
 
-<<<<<<< HEAD
-=======
 void redRight(){
->>>>>>> origin/master
 
-//}
 
-//void moveInLineForSeconds(const string direction, int power){
-
-//}
+}
 
 void redLeft(){
 
