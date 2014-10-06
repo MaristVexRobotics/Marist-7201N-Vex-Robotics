@@ -28,12 +28,9 @@ Matt Haidet
 #define LEFT_LIFT_MOTOR2
 #define RIGHT_CLAW_MOTOR1
 #define LEFT_CLAW_MOTOR2
+
 //Sensors:
 #define Selector SensorValue(selector)
-
-//Sound
-
-
 
 //Controller:
 #define rightXStick vexRT[Ch1]
@@ -52,6 +49,10 @@ Matt Haidet
 #define leftLBtn vexRT[Btn7L]
 #define leftUBtn vexRT[Btn7U]
 #define leftDBtn vexRT[Btn7D]
-#define AccelerometerX vexRT[AccelX]
-#define AccelerometerY vexRT[AccelY]
-#define AccelerometerZ vexRT[AccelZ]
+#define accelerometerX vexRT[AccelX]
+#define accelerometerY vexRT[AccelY]
+#define accelerometerZ vexRT[AccelZ]
+
+
+//Other
+#define batteryLevel nImmediateBatteryLevel

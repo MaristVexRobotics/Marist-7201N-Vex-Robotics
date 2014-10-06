@@ -1,16 +1,20 @@
 #pragma config(Sensor, in1,    selector,       sensorAnalog)
+#pragma config(UART_Usage, UART2, uartVEXLCD, baudRate19200, IOPins, None, None)
 #include "AutonomousFunctions.h"
 
 int currentSelection;
 string text;
+
+void troublshoot(){
+	clearLCDLine(0);
+	clearLCDLine(1);
+}
 
 void init(){
 	clearLCDLine(0);
 	clearLCDLine(1);
 	bLCDBacklight = true;
 }
-
-
 
 int getSelectionNumber(){
 	if(Selector > 3915){

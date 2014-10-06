@@ -11,9 +11,8 @@
 
 task main(){
 	init();
-
 	while(true){
 		//	drive();
- testSelector();
+		testSelector();
 	}
 }
