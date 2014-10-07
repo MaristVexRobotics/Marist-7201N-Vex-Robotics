@@ -32,7 +32,7 @@ Matt Haidet
 //Sensors:
 #define Selector SensorValue(selector)
 
-//Controller:
+//Main Controller:
 #define rightXStick vexRT[Ch1]
 #define rightYStick vexRT[Ch2]
 #define leftXStick vexRT[Ch4]
@@ -52,6 +52,27 @@ Matt Haidet
 #define accelerometerX vexRT[AccelX]
 #define accelerometerY vexRT[AccelY]
 #define accelerometerZ vexRT[AccelZ]
+
+//Secondary Controller:
+#define partnerRightXStick vexRT[Ch1Xmtr2]
+#define partnerRightYStick vexRT[Ch2Xmtr2]
+#define partnerLeftXStick vexRT[Ch4Xmtr2]
+#define partnerLeftYStick vexRT[Ch3Xmtr2]
+#define partnerRightUpBumper vexRT[Btn6UXmtr2]
+#define partnerRightDownBumper vexRT[Btn6DXmtr2]
+#define partnerLeftUpBumper vexRT[Btn5UXmtr2]
+#define partnerLeftDownBumper vexRT[Btn5DXmtr2]
+#define partnerRightRBtn vexRT[Btn8RXmtr2]
+#define partnerRightLBtn vexRT[Btn8LXmtr2]
+#define partnerRightUBtn vexRT[Btn8UXmtr2]
+#define partnerRightDBtn vexRT[Btn8DXmtr2]
+#define partnerLeftRBtn vexRT[Btn7RXmtr2]
+#define partnerLeftLBtn vexRT[Btn7LXmtr2]
+#define partnerLeftUBtn vexRT[Btn7UXmtr2]
+#define partnerLeftDBtn vexRT[Btn7DXmtr2]
+#define partnerAccelerometerX vexRT[AccelXXmtr2]
+#define partnerAccelerometerY vexRT[AccelYXmtr2]
+#define partnerAccelerometerZ vexRT[AccelZXmtr2]
 
 
 //Other

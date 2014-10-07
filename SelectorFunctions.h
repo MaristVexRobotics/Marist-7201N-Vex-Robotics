@@ -5,10 +5,15 @@
 int currentSelection;
 string text;
 
-void troublshoot(){
-	clearLCDLine(0);
-	clearLCDLine(1);
-}
+string programNames[6] = {
+"None",
+"Blue-Left",
+"Blue-Right",
+"Red-Left",
+"Red-Right",
+"Challenge"
+};
+
 
 void init(){
 	clearLCDLine(0);
@@ -21,13 +26,13 @@ int getSelectionNumber(){
 		return 1;
 		} else if(Selector <= 3915 && Selector > 3340){
 		return 2;
-	} else if(Selector <= 3340 && Selector > 2605){
-	return 3;
-} else if(Selector <= 2605 && Selector > 2291){
- return 4;
-} else {
-return 5;
-}
+		} else if(Selector <= 3340 && Selector > 2605){
+		return 3;
+		} else if(Selector <= 2605 && Selector > 2291){
+		return 4;
+		} else {
+		return 5;
+	}
 }
 
 bool hasSelectionChanged(){
