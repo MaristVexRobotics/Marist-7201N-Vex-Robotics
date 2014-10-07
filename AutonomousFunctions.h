@@ -113,7 +113,7 @@ void waitForTruth(bool truth){
 //Autonomous Programs
 
 void blueRight(){
-
+		linearMove(70);
 
 
 }
