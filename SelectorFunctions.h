@@ -45,6 +45,8 @@ bool hasSelectionChanged(){
 
 void testSelector(){
 	if(hasSelectionChanged()){
+		clearLCDLine(0);
+		clearLCDLine(1);
 		text = programNames[getSelectionNumber()];
 		displayLCDString(0, 0, text);
 	}
