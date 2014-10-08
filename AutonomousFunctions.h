@@ -11,6 +11,7 @@ void linearMove(int power){
 	RIGHT_BACK = power;
 	LEFT_FRONT = power;
 	RIGHT_FRONT = power;
+	wait1Msec(1000);
 }
 
 void turnInPlace(const string direction, int power){
@@ -80,7 +81,6 @@ void lateralMove(const string direction, float seconds, int power) {
 		RIGHT_FRONT = power;
 		RIGHT_BACK = -power;
 	}
-
 
 }
 
