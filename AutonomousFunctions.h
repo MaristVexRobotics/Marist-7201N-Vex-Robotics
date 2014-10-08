@@ -1,9 +1,19 @@
-	#pragma config(Sensor, in1,    selector,       sensorAnalog)
+#pragma config(Sensor, in1,    selector,       sensorAnalog)
 #pragma config(Motor,  port1,           backLeft,      tmotorVex393, openLoop)
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
 #pragma config(Motor,  port10,          backRight,     tmotorVex393, openLoop, reversed)
 
+/*TODO:
+
+1. Replace repeated code with functions if possible
+2. Write encoder functions
+3. make sure functions are consitent
+4. Add lateral move for time and distance
+5. Move actual automonous to a seperate file
+6. Make time functions actual go for Seconds rather than milis (multiple 1msec by 1000)
+
+*/
 
 //linear:  straight  forward, backward in any direction
 void linearMove(int power){
@@ -14,6 +24,23 @@ void linearMove(int power){
 	wait1Msec(1000);
 }
 
+//lateral move will decide in which direction the robot will go(left and right)
+void lateralMove(const string direction, int power) {
+	if(direction == "left") {
+		LEFT_FRONT = power;
+		LEFT_BACK = -power;
+		RIGHT_FRONT = -power;
+		RIGHT_BACK = power;
+	}
+	if(direction == "right") {
+		LEFT_FRONT = -power;
+		LEFT_BACK = power;
+		RIGHT_FRONT = power;
+		RIGHT_BACK = -power;
+	}
+	linearMove(0);
+}
+
 void turnInPlace(const string direction, int power){
 	if(direction == "right"){
 		LEFT_FRONT = -power;
@@ -21,7 +48,6 @@ void turnInPlace(const string direction, int power){
 		RIGHT_FRONT = power;
 		RIGHT_BACK = -power;
 	}
-
 	if (direction ==  "left") {
 		LEFT_BACK =	-power;
 		RIGHT_BACK = power;
@@ -31,66 +57,34 @@ void turnInPlace(const string direction, int power){
 
 }
 
-//forwardTime
 void forwardTime(int power, int mSecs) {
-
 	linearMove(power);
 	wait1Msec(mSecs);
 	linearMove(0);
-
 }
-//backwardTime
+
 void backwardTime(int power, int mSecs) {
-	linearMove(power);
+	linearMove(-power);
 	wait1Msec(mSecs);
 	linearMove(0);
-
 }
-//leftMoveTime: robot goes horizontally left
+
 void leftMoveTime(int power, int mSecs) {
-	linearMove(power);
+	lateralMove("left", power);
 	wait1Msec(mSecs);
 	linearMove(0);
-
 }
 
-//rightMoveTime
 void rightMoveTime(int power, int mSecs) {
-	linearMove(power);
+	lateralMove("right", power);
 	wait1Msec(mSecs);
 	linearMove(0);
 }
 
-//turn the robot right
 void turnRightTime(int power, int mSecs) {
-//	turnInPlace(right, 70);
-
+	//	turnInPlace(right, 70);
 }
 
-//lateral move will decide in which direction the robot will go(left and right)
-void lateralMove(const string direction, float seconds, int power) {
-	if(direction == "left") {
-		LEFT_FRONT = power;
-		LEFT_BACK = -power;
-		RIGHT_FRONT = -power;
-		RIGHT_BACK = power;
-
-	}
-	if(direction == "right") {
-		LEFT_FRONT = -power;
-		LEFT_BACK = power;
-		RIGHT_FRONT = power;
-		RIGHT_BACK = -power;
-		wait1Msec(seconds);
-		LEFT_FRONT = 0;
-		LEFT_BACK = 0;
-		RIGHT_FRONT = 0;
-		RIGHT_BACK = 0;
-	}
-
-
-
-}
 
 void turnForSeconds(const string direction, float seconds, int power){
 
@@ -111,12 +105,12 @@ void moveInLineForSeconds(const string direction, int power){
 
 }
 
+
+
 void turnDegrees(const string direction, float degrees, int power){
 
-			turnInPlace(direction, power);
-			//while(SensorValue[
-
-
+	turnInPlace(direction, power);
+	//while(SensorValue[
 
 }
 
@@ -139,9 +133,7 @@ void waitForTruth(bool truth){
 //Autonomous Programs
 
 void blueRight(){
-		linearMove(70);
-		wait1Msec(300);
-		lateralMove("left" , 500, 80);
+leftMoveTime(100,10);
 }
 
 void blueLeft(){
