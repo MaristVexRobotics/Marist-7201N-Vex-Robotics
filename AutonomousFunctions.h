@@ -1,4 +1,4 @@
-#pragma config(Sensor, in1,    selector,       sensorAnalog)
+	#pragma config(Sensor, in1,    selector,       sensorAnalog)
 #pragma config(Motor,  port1,           backLeft,      tmotorVex393, openLoop)
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
@@ -63,6 +63,24 @@ void rightMoveTime(int power, int mSecs) {
 //turn the robot right
 void turnRightTime(int power, int mSecs) {
 //	turnInPlace(right, 70);
+
+}
+
+//lateral move will decide in which direction the robot will go(left and right)
+void lateralMove(const string direction, float seconds, int power) {
+	if(direction == "left") {
+		LEFT_FRONT = power;
+		LEFT_BACK = -power;
+		RIGHT_FRONT = -power;
+		RIGHT_BACK = power;
+	}
+	if(direction == "right") {
+		LEFT_FRONT = -power;
+		LEFT_BACK = power;
+		RIGHT_FRONT = power;
+		RIGHT_BACK = -power;
+	}
+
 
 }
 
