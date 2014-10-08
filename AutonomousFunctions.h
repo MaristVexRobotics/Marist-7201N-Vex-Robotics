@@ -74,13 +74,21 @@ void lateralMove(const string direction, float seconds, int power) {
 		LEFT_BACK = -power;
 		RIGHT_FRONT = -power;
 		RIGHT_BACK = power;
+
 	}
 	if(direction == "right") {
 		LEFT_FRONT = -power;
 		LEFT_BACK = power;
 		RIGHT_FRONT = power;
 		RIGHT_BACK = -power;
+		wait1Msec(seconds);
+		LEFT_FRONT = 0;
+		LEFT_BACK = 0;
+		RIGHT_FRONT = 0;
+		RIGHT_BACK = 0;
 	}
+
+
 
 }
 
@@ -132,8 +140,8 @@ void waitForTruth(bool truth){
 
 void blueRight(){
 		linearMove(70);
-
-
+		wait1Msec(300);
+		lateralMove("left" , 500, 80);
 }
 
 void blueLeft(){
