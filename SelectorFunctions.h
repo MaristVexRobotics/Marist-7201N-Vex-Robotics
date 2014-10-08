@@ -6,12 +6,12 @@ int currentSelection;
 string text;
 
 string programNames[6] = {
-"None",
-"Blue-Left",
-"Blue-Right",
-"Red-Left",
-"Red-Right",
-"Challenge"
+	"0. None",
+	"1. Blue-Left",
+	"2. Blue-Right",
+	"3. Red-Left",
+	"4. Red-Right",
+	"5. Challenge"
 };
 
 
@@ -45,7 +45,7 @@ bool hasSelectionChanged(){
 
 void testSelector(){
 	if(hasSelectionChanged()){
-		text = getSelectionNumber()+1;
+		text = programNames[getSelectionNumber()];
 		displayLCDString(0, 0, text);
 	}
 }
@@ -57,11 +57,9 @@ void runAutonomous(){
 		blueLeft();
 		break;
 
-
 	case 1:
 		blueRight();
 		break;
-
 
 	case 2:
 		redLeft();
