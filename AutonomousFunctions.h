@@ -21,7 +21,7 @@ void linearMove(int power){
 	RIGHT_BACK = power;
 	LEFT_FRONT = power;
 	RIGHT_FRONT = power;
-
+	wait1Msec(1000);
 }
 
 //lateral move will decide in which direction the robot will go(left and right)
@@ -38,21 +38,21 @@ void lateralMove(const string direction, int power) {
 		RIGHT_FRONT = power;
 		RIGHT_BACK = -power;
 	}
-
+	linearMove(0);
 }
 
 void turnInPlace(const string direction, int power){
 	if(direction == "right"){
-		LEFT_FRONT = power;
+		LEFT_FRONT = -power;
 		LEFT_BACK = power;
-		RIGHT_FRONT = -power;
+		RIGHT_FRONT = power;
 		RIGHT_BACK = -power;
 	}
 	if (direction ==  "left") {
-		LEFT_FRONT = -power;
-		LEFT_BACK = -power;
-		RIGHT_FRONT = power;
+		LEFT_BACK =	-power;
 		RIGHT_BACK = power;
+		LEFT_FRONT = power;
+		RIGHT_FRONT = -power;
 	}
 
 }
@@ -86,12 +86,19 @@ void turnRightTime(int power, int mSecs) {
 }
 
 
-void turnForSeconds(const string direction, int power, float seconds){
+void turnForSeconds(const string direction, float seconds, int power){
 
-	turnInPlace(direction, power);
-	wait1Msec(seconds);
-	linearMove(0);
-
+	if(direction == "right") {
+		LEFT_BACK = -power;
+		LEFT_FRONT = -power;
+		RIGHT_FRONT = power;
+		RIGHT_BACK = power;
+		}else if(direction == "left") {
+		LEFT_BACK = power;
+		LEFT_FRONT = power;
+		RIGHT_FRONT = -power;
+		RIGHT_BACK = -power;
+	}
 }
 
 void moveInLineForSeconds(const string direction, int power){
@@ -126,11 +133,7 @@ void waitForTruth(bool truth){
 //Autonomous Programs
 
 void blueRight(){
-forwardTime(50, 350);
-backwardTime(50, 250);
-wait1Msec(100);
-turnForSeconds("left", 70, 750);
-
+leftMoveTime(100,10);
 }
 
 void blueLeft(){
