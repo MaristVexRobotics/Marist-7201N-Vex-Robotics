@@ -11,10 +11,10 @@
 
 task main(){
 	init();
-	while(true){
+	/*while(true){
 		drive();
 	//	testSelector();
 
-	}
-	//blueRight();
+	}*/
+	blueRight();
 }
