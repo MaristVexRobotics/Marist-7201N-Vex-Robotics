@@ -10,6 +10,6 @@ LEFT_BACK = leftYStick - leftUpBumper*127 + rightUpBumper*127;
 LEFT_FRONT = leftYStick + leftUpBumper*127 - rightUpBumper*127;
 RIGHT_BACK = rightYStick - rightUpBumper*127 + leftUpBumper*127;
 RIGHT_FRONT = rightYStick + rightUpBumper*127 - leftUpBumper*127;
-PlayTone(70, leftDBtn); //Horn
+PlayTone(70*leftDBtn, leftDBtn); //Horn
 //PlayTone(80, partnerLeftDBtn); //Horn
 }
