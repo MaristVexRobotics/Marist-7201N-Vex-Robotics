@@ -24,6 +24,29 @@ void linearMove(int power){
 	wait1Msec(1000);
 }
 
+//lift function for the robot
+void liftArm(const string direction, int power, int time) {
+	if(direction == "up") {
+		RIGHT_LIFT_MOTOR1 = power;
+		RIGHT_LIFT_MOTOR2 = power;
+		LEFT_LIFT_MOTOR1 = power;
+		LEFT_LIFT_MOTOR2 = power;
+	}
+
+	if(direction == "down") {
+	  RIGHT_LIFT_MOTOR1 = -power;
+		RIGHT_LIFT_MOTOR2 = -power;
+		LEFT_LIFT_MOTOR1 = -power;
+		LEFT_LIFT_MOTOR2 = -power;
+	}
+	wait1Msec(time);
+		RIGHT_LIFT_MOTOR1 = 0;
+		RIGHT_LIFT_MOTOR2 = 0;
+		LEFT_LIFT_MOTOR1 = 0;
+		LEFT_LIFT_MOTOR2 = 0;
+
+}
+
 //lateral move will decide in which direction the robot will go(left and right)
 void lateralMove(const string direction, int power) {
 	if(direction == "left") {
