@@ -3,6 +3,10 @@
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
 #pragma config(Motor,  port10,          backRight,     tmotorVex393, openLoop, reversed)
+#pragma config(Motor,  port7,           leftLift2,     tmotorVex393, openLoop, reversed)
+#pragma config(Motor,  port8,           leftLift1,     tmotorVex393, openLoop, reversed)
+#pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
+#pragma config(Motor,  port10,          backRight,     tmotorVex393, openLoop, reversed)
 
 
 /*
@@ -22,10 +26,10 @@ Matt Haidet
 #define LEFT_BACK motor[backLeft]
 #define RIGHT_FRONT motor[frontRight]
 #define RIGHT_BACK motor[backRight]
-#define RIGHT_LIFT_MOTOR1
-#define RIGHT_LIFT_MOTOR2
-#define LEFT_LIFT_MOTOR1
-#define LEFT_LIFT_MOTOR2
+#define RIGHT_LIFT_MOTOR1 motor[rightLift1]
+#define RIGHT_LIFT_MOTOR2 motor[rightLift2]
+#define LEFT_LIFT_MOTOR1 motor[leftLift1]
+#define LEFT_LIFT_MOTOR2 motor[leftLift2]
 #define RIGHT_CLAW_MOTOR1
 #define LEFT_CLAW_MOTOR2
 

@@ -55,21 +55,34 @@ void testSelector(){
 void runAutonomous(){
 	switch(getSelectionNumber()){
 
-	case 0:
+	case 1:
 		blueLeft();
 		break;
 
-	case 1:
+	case 2:
 		blueRight();
 		break;
 
-	case 2:
+	case 3:
 		redLeft();
 		break;
 
-	case 3:
+	case 4:
 		redRight();
 		break;
 
+	case 5:
+		challenge();
+		break;
+
 	}
+}
+
+bool autonomous(){
+	testSelector();
+	if(nLCDButtons == 2){
+		runAutonomous();
+		return true;
+	}
+	return false;
 }
