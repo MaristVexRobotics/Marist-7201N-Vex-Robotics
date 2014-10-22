@@ -3,6 +3,7 @@
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port3,           rightLift1,    tmotorVex393, openLoop)
 #pragma config(Motor,  port4,           rightLift2,    tmotorVex393, openLoop)
+#pragma config(Motor,  port5,           liftClaw1,     tmotorVex393, openLoop, reversed)
 #pragma config(Motor,  port7,           leftLift2,     tmotorVex393, openLoop, reversed)
 #pragma config(Motor,  port8,           leftLift1,     tmotorVex393, openLoop, reversed)
 #pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
@@ -11,7 +12,7 @@
 
 #include "DriverFunctions.h"
 #include "SelectorFunctions.h"
-
+#include "constants.h"
 
 
 task main(){

@@ -30,8 +30,8 @@ Matt Haidet
 #define RIGHT_LIFT_MOTOR2 motor[rightLift2]
 #define LEFT_LIFT_MOTOR1 motor[leftLift1]
 #define LEFT_LIFT_MOTOR2 motor[leftLift2]
-#define RIGHT_CLAW_MOTOR1
-#define LEFT_CLAW_MOTOR2
+#define LIFT_CLAW_MOTOR1 motor[liftClaw1]
+
 
 //Sensors:
 #define Selector SensorValue(selector)
