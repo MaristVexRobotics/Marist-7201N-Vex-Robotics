@@ -18,6 +18,7 @@ RIGHT_LIFT_MOTOR1 = rightUBtn*127 - rightDBtn*127;
 RIGHT_LIFT_MOTOR2 = rightUBtn*127 - rightDBtn*127;
 LEFT_LIFT_MOTOR1 = rightUBtn*127 - rightDBtn*127;
 LEFT_LIFT_MOTOR2 = rightUBtn*127 - rightDBtn*127;
+LIFT_CLAW_MOTOR1 = rightRBtn*127 - rightLBtn*127;
 PlayTone(70*leftDBtn, leftDBtn); //Horn
 //PlayTone(80, partnerLeftDBtn); //Horn
 }
