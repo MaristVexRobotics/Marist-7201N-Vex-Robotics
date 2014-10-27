@@ -14,11 +14,11 @@ LEFT_BACK = leftYStick - leftUpBumper*127 + rightUpBumper*127;
 LEFT_FRONT = leftYStick + leftUpBumper*127 - rightUpBumper*127;
 RIGHT_BACK = rightYStick - rightUpBumper*127 + leftUpBumper*127;
 RIGHT_FRONT = rightYStick + rightUpBumper*127 - leftUpBumper*127;
-RIGHT_LIFT_MOTOR1 = rightUBtn*127 - rightDBtn*127;
-RIGHT_LIFT_MOTOR2 = rightUBtn*127 - rightDBtn*127;
-LEFT_LIFT_MOTOR1 = rightUBtn*127 - rightDBtn*127;
-LEFT_LIFT_MOTOR2 = rightUBtn*127 - rightDBtn*127;
-LIFT_CLAW_MOTOR1 = rightRBtn*127 - rightLBtn*127;
+RIGHT_LIFT_MOTOR1 = rightDBtn*127 - rightUBtn*127;
+RIGHT_LIFT_MOTOR2 = rightDBtn*127 - rightUBtn*127;
+LEFT_LIFT_MOTOR1 = rightDBtn*127 - rightUBtn*127;
+LEFT_LIFT_MOTOR2 = rightDBtn*127 - rightUBtn*127;
+LIFT_CLAW_MOTOR1 = rightRBtn*127 - rightUBtn*127;
 PlayTone(70*leftDBtn, leftDBtn); //Horn
 //PlayTone(80, partnerLeftDBtn); //Horn
 }
