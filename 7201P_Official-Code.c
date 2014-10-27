@@ -18,10 +18,9 @@
 task main(){
 	init();
 	while(true){ //ONLY for testing
-		//if(autonomous()){
-			//break; //...and becuase I know how to get out of a While(true)
-		//}
-		drive();
+		autonomous();
+		//drive();
 	}
+		//blueRight();
 
 }

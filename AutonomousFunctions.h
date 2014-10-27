@@ -34,12 +34,11 @@ void linearMove(int power){
 //lift arm function for the robot
 void liftArm(const string direction, int power, int time) {
 	if(direction == "up") {
-		RIGHT_LIFT_MOTOR1 = power;
-		RIGHT_LIFT_MOTOR2 = power;
-		LEFT_LIFT_MOTOR1 = power;
-		LEFT_LIFT_MOTOR2 = power;
-	}
-
+		RIGHT_LIFT_MOTOR1 = -power;
+		RIGHT_LIFT_MOTOR2 = -power;
+		LEFT_LIFT_MOTOR1 = -power;
+		LEFT_LIFT_MOTOR2 = -power;
+}
 	if(direction == "down") {
 	  RIGHT_LIFT_MOTOR1 = -power;
 		RIGHT_LIFT_MOTOR2 = -power;
@@ -54,11 +53,11 @@ void liftArm(const string direction, int power, int time) {
 }
 
 //lift claw function for the claw
-void liftClaw(const string direction, int power, int time) {
-	if(direction == "up") {
+void controlClaw(const string direction, int power, int time) {
+	if(direction == "open") {
 		LIFT_CLAW_MOTOR1 = power;
 	}
-	if(direction == "down") {
+	if(direction == "close") {
 		LIFT_CLAW_MOTOR1  = -power;
 	}
 	wait1Msec(time);
@@ -135,7 +134,8 @@ void turnForSeconds(const string direction, float seconds, int power){
 		LEFT_FRONT = -power;
 		RIGHT_FRONT = power;
 		RIGHT_BACK = power;
-		}else if(direction == "left") {
+		}
+		else if(direction == "left") {
 		LEFT_BACK = power;
 		LEFT_FRONT = power;
 		RIGHT_FRONT = -power;
@@ -169,13 +169,16 @@ void waitForTruth(bool truth){
 	while(!truth){
 		wait1Msec(1);
 	}
+
 }
 
 
 //Autonomous Programs
 
 void blueRight(){
-leftMoveTime(100,10);
+	liftArm("up", 127, 500);
+	//controlClaw("open" , 127, 40);
+
 }
 
 void blueLeft(){
