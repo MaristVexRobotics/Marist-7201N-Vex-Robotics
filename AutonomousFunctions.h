@@ -54,15 +54,17 @@ void liftArm(const string direction, int power, int time) {
 
 //lift claw function for the claw
 void controlClaw(const string direction, int power, int time) {
-	if(direction == "open") {
-		LIFT_CLAW_MOTOR1 = power;
+	if(direction == "up") {
+		LIFT_CLAW_MOTOR1  = power;
+		LEFT_LIFT_MOTOR2 = power;
 	}
-	if(direction == "close") {
+	if(direction == "down") {
 		LIFT_CLAW_MOTOR1  = -power;
+		LEFT_LIFT_MOTOR2 = -power;
 	}
 	wait1Msec(time);
 		LIFT_CLAW_MOTOR1 = 0;
-
+    LIFT_CLAW_MOTOR2 = 0;
 }
 
 //lateral move will decide in which direction the robot will go(left and right)
@@ -177,8 +179,8 @@ void waitForTruth(bool truth){
 
 void blueRight(){
 	liftArm("up", 127, 500);
-	//controlClaw("open" , 127, 40);
-
+	controlClaw("down" , 50, 1000);
+  backwardTime(50, 2000);
 }
 
 void blueLeft(){
@@ -190,7 +192,9 @@ void redRight(){
 }
 
 void redLeft(){
-
+	liftArm("up", 127, 500);
+	controlClaw("down" , 50, 1000);
+  backwardTime(50, 2000);
 }
 
 void challenge(){
