@@ -31,6 +31,7 @@ Matt Haidet
 #define LEFT_LIFT_MOTOR1 motor[leftLift1]
 #define LEFT_LIFT_MOTOR2 motor[leftLift2]
 #define LIFT_CLAW_MOTOR1 motor[liftClaw1]
+#define LIFT_CLAW_MOTOR2 motor[liftClaw2]
 
 
 //Sensors:

@@ -3,6 +3,7 @@
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port3,           rightLift1,    tmotorVex393, openLoop)
 #pragma config(Motor,  port4,           rightLift2,    tmotorVex393, openLoop)
+#pragma config(Motor,  port5,           liftClaw2,     tmotorVex393, openLoop, reversed)
 #pragma config(Motor,  port6,           liftClaw1,     tmotorVex393, openLoop)
 #pragma config(Motor,  port7,           leftLift2,     tmotorVex393, openLoop)
 #pragma config(Motor,  port8,           leftLift1,     tmotorVex393, openLoop)
@@ -12,13 +13,16 @@
 
 #include "DriverFunctions.h"
 #include "SelectorFunctions.h"
-#include "constants.h"
 
 
 task main(){
 	init();
 	while(true){ //ONLY for testing
+<<<<<<< HEAD
 		//autonomous();
+=======
+	//	autonomous();
+>>>>>>> origin/master
 		drive();
 	}
 		//blueRight();
