@@ -178,9 +178,12 @@ void waitForTruth(bool truth){
 //Autonomous Programs
 
 void blueRight(){
-	liftArm("up", 127, 500);
-	controlClaw("down" , 50, 1000);
-  backwardTime(50, 2000);
+backwardTime(50, 400);
+liftArm("up", 100, 2000);
+forwardTime(40, 500);
+	controlClaw("down" , 50, 2000);
+	backwardTime(50, 500);
+
 }
 
 void blueLeft(){
@@ -192,9 +195,7 @@ void redRight(){
 }
 
 void redLeft(){
-	liftArm("up", 127, 500);
-	controlClaw("down" , 50, 1000);
-  backwardTime(50, 2000);
+blueRight();
 }
 
 void challenge(){

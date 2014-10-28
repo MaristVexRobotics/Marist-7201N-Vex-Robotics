@@ -78,7 +78,7 @@ void runAutonomous(){
 	}
 }
 
-bool autonomous(){
+bool auton(){
 	testSelector();
 	if(nLCDButtons == 2){
 		runAutonomous();

@@ -15,16 +15,35 @@
 #include "SelectorFunctions.h"
 
 
-task main(){
-	init();
-	while(true){ //ONLY for testing
-<<<<<<< HEAD
-		//autonomous();
-=======
-	//	autonomous();
->>>>>>> origin/master
-		drive();
-	}
-		//blueRight();
+#pragma platform(VEX)
 
+//Competition Control and Duration Settings
+#pragma competitionControl(Competition)
+#pragma autonomousDuration(20)
+#pragma userControlDuration(120)
+
+#include "Vex_Competition_Includes.c"   //Main competition background code...do not modify!
+
+
+void pre_auton()
+{
+
+  bStopTasksBetweenModes = true;
+init();
+}
+
+
+task autonomous()
+{
+auton();
+}
+
+task usercontrol()
+{
+	// User control code here, inside the loop
+
+	while (true)
+	{
+drive();
+	}
 }
