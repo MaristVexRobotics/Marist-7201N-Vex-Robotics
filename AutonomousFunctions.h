@@ -187,7 +187,6 @@ void blueLeft(){
 
 void redRight(){
 
-
 }
 
 void redLeft(){
