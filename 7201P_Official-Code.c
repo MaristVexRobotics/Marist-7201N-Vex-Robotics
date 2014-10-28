@@ -18,8 +18,8 @@
 task main(){
 	init();
 	while(true){ //ONLY for testing
-		autonomous();
-		//drive();
+		//autonomous();
+		drive();
 	}
 		//blueRight();
 
