@@ -70,18 +70,22 @@ void controlClaw(const string direction, int power, int time) {
 //lateral move will decide in which direction the robot will go(left and right)
 void lateralMove(const string direction, int power) {
 	if(direction == "left") {
-		LEFT_FRONT = power;
-		LEFT_BACK = -power;
-		RIGHT_FRONT = -power;
-		RIGHT_BACK = power;
-	}
-	if(direction == "right") {
 		LEFT_FRONT = -power;
 		LEFT_BACK = power;
 		RIGHT_FRONT = power;
 		RIGHT_BACK = -power;
 	}
-	linearMove(0);
+	if(direction == "right") {
+		LEFT_FRONT = power;
+		LEFT_BACK = -power;
+		RIGHT_FRONT = -power;
+		RIGHT_BACK = power;
+	}
+	wait1Msec(1000);
+		LEFT_FRONT = 0;
+		LEFT_BACK = 0;
+		RIGHT_FRONT = 0;
+		RIGHT_BACK = 0;
 }
 
 void turnInPlace(const string direction, int power){
@@ -129,7 +133,7 @@ void turnRightTime(int power, int mSecs) {
 }
 
 
-void turnForSeconds(const string direction, float seconds, int power){
+void turnForSeconds(const string direction,int power, float seconds){
 
 	if(direction == "right") {
 		LEFT_BACK = -power;
@@ -137,12 +141,17 @@ void turnForSeconds(const string direction, float seconds, int power){
 		RIGHT_FRONT = power;
 		RIGHT_BACK = power;
 		}
-		else if(direction == "left") {
+ if(direction == "left") {
 		LEFT_BACK = power;
 		LEFT_FRONT = power;
 		RIGHT_FRONT = -power;
 		RIGHT_BACK = -power;
 	}
+	wait1Msec(1000);
+		LEFT_BACK = 0;
+		LEFT_FRONT = 0;
+		RIGHT_FRONT = 0;
+		RIGHT_BACK = 0;
 }
 
 void moveInLineForSeconds(const string direction, int power){
@@ -178,24 +187,43 @@ void waitForTruth(bool truth){
 //Autonomous Programs
 
 void blueRight(){
-backwardTime(50, 400);
-liftArm("up", 100, 2000);
-forwardTime(40, 500);
+	backwardTime(50, 400);
+	liftArm("up", 100, 2000);
+	forwardTime(40, 490);
 	controlClaw("down" , 50, 2000);
 	backwardTime(50, 500);
 
 }
 
 void blueLeft(){
+		backwardTime(80, 700);
+		lateralMove("right", 90);
+		//controlClaw("down", 60, 400);
+		forwardTime(40, 100);
+		lateralMove("left", 500);
+		forwardTime(100, 600);
+		backwardTime(80, 300);
 
 }
 
 void redRight(){
-
+  forwardTime(90, 500);
+  controlClaw("up", 90, 500);
+  backwardTime(90, 300);
+  controlClaw("down",  50, 200);
+  lateralMove("left", 90, 400);
+  forwardTime(90, 300);
+  controlClaw("up", 70, 150);
+  backwardTime(80, 300);
 }
 
 void redLeft(){
-blueRight();
+controlClaw("down", 80, 300);
+backwardTime(90, 500);
+lateralMove("right", 80, 400);
+forwardTime(90, 500);
+turnForSeconds("right", 80, 5.0);
+
 }
 
 void challenge(){

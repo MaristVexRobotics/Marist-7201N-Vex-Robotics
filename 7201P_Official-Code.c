@@ -27,15 +27,17 @@
 
 void pre_auton()
 {
-
-  bStopTasksBetweenModes = true;
 init();
+  bStopTasksBetweenModes = true;
+
 }
 
 
 task autonomous()
 {
-auton();
+	pre_auton();
+while(auton() == false){
+}
 }
 
 task usercontrol()
