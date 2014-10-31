@@ -38,18 +38,18 @@ void liftArm(const string direction, int power, int time) {
 		RIGHT_LIFT_MOTOR2 = -power;
 		LEFT_LIFT_MOTOR1 = -power;
 		LEFT_LIFT_MOTOR2 = -power;
-}
+	}
 	if(direction == "down") {
-	  RIGHT_LIFT_MOTOR1 = -power;
+		RIGHT_LIFT_MOTOR1 = -power;
 		RIGHT_LIFT_MOTOR2 = -power;
 		LEFT_LIFT_MOTOR1 = -power;
 		LEFT_LIFT_MOTOR2 = -power;
 	}
 	wait1Msec(time);
-		RIGHT_LIFT_MOTOR1 = 0;
-		RIGHT_LIFT_MOTOR2 = 0;
-		LEFT_LIFT_MOTOR1 = 0;
-		LEFT_LIFT_MOTOR2 = 0;
+	RIGHT_LIFT_MOTOR1 = 0;
+	RIGHT_LIFT_MOTOR2 = 0;
+	LEFT_LIFT_MOTOR1 = 0;
+	LEFT_LIFT_MOTOR2 = 0;
 }
 
 //lift claw function for the claw
@@ -63,8 +63,8 @@ void controlClaw(const string direction, int power, int time) {
 		LEFT_LIFT_MOTOR2 = -power;
 	}
 	wait1Msec(time);
-		LIFT_CLAW_MOTOR1 = 0;
-    LIFT_CLAW_MOTOR2 = 0;
+	LIFT_CLAW_MOTOR1 = 0;
+	LIFT_CLAW_MOTOR2 = 0;
 }
 
 //lateral move will decide in which direction the robot will go(left and right)
@@ -136,8 +136,8 @@ void turnForSeconds(const string direction, float seconds, int power){
 		LEFT_FRONT = -power;
 		RIGHT_FRONT = power;
 		RIGHT_BACK = power;
-		}
-		else if(direction == "left") {
+	}
+	else if(direction == "left") {
 		LEFT_BACK = power;
 		LEFT_FRONT = power;
 		RIGHT_FRONT = -power;
@@ -178,9 +178,9 @@ void waitForTruth(bool truth){
 //Autonomous Programs
 
 void blueRight(){
-backwardTime(50, 400);
-liftArm("up", 100, 2000);
-forwardTime(40, 500);
+	backwardTime(50, 400);
+	liftArm("up", 100, 2000);
+	forwardTime(40, 500);
 	controlClaw("down" , 50, 2000);
 	backwardTime(50, 500);
 
@@ -195,7 +195,7 @@ void redRight(){
 }
 
 void redLeft(){
-blueRight();
+	blueRight();
 }
 
 void challenge(){

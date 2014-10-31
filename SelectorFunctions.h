@@ -80,7 +80,7 @@ void runAutonomous(){
 
 bool auton(){
 	testSelector();
-	if(nLCDButtons == 2){
+	if(nLCDButtons == 2){ //if lcd button is pressed
 		runAutonomous();
 		return true;
 	}
