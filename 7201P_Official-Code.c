@@ -1,4 +1,6 @@
 #pragma config(Sensor, in1,    selector,       sensorAnalog)
+#pragma config(Sensor, dgtl1,  rightEncoder,   sensorQuadEncoder)
+#pragma config(Sensor, dgtl3,  leftEncoder,    sensorQuadEncoder)
 #pragma config(Motor,  port1,           backLeft,      tmotorVex393, openLoop)
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port3,           rightLift1,    tmotorVex393, openLoop)
@@ -36,8 +38,7 @@ init();
 task autonomous()
 {
 	pre_auton();
-while(auton() == false){
-}
+auton();
 }
 
 task usercontrol()
