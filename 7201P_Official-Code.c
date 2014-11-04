@@ -29,8 +29,8 @@
 
 void pre_auton()
 {
-init();
-  bStopTasksBetweenModes = true;
+	init();
+	bStopTasksBetweenModes = true;
 
 }
 
@@ -38,7 +38,7 @@ init();
 task autonomous()
 {
 	pre_auton();
-auton();
+	auton();
 }
 
 task usercontrol()
@@ -47,6 +47,6 @@ task usercontrol()
 
 	while (true)
 	{
-drive();
+		drive();
 	}
 }

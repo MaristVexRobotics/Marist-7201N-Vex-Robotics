@@ -65,11 +65,11 @@ void liftArm(const string direction, int power, int time) {
 void controlClaw(const string direction, int power, int time) {
 	if(direction == "up") {
 		LIFT_CLAW_MOTOR1  = power;
-		LEFT_LIFT_MOTOR2 = power;
+		LIFT_CLAW_MOTOR2 = power;
 	}
 	if(direction == "down") {
 		LIFT_CLAW_MOTOR1  = -power;
-		LEFT_LIFT_MOTOR2 = -power;
+		LIFT_CLAW_MOTOR2  = -power;
 	}
 	wait1Msec(time);
 	LIFT_CLAW_MOTOR1 = 0;
@@ -163,10 +163,27 @@ void turnAmount(const string direction, float amount, int power){
 		} else {
 		waitForTruth(SensorValue[rightEncoder] <= -amount && SensorValue[leftEncoder] >= amount);
 	}
+LEFT_FRONT = 0;
+LEFT_BACK = 0;
+RIGHT_FRONT = 0;
+RIGHT_BACK = 0;
 }
 
-void linearMoveSeconds(const string direction, int power){
+void forwardDistance(int power, float amount){
+	linearMove(power);
+waitForTruth(SensorValue[rightEncoder] >= amount && SensorValue[leftEncoder] >= amount);
+}
 
+void forwardExact(int power, float amount, int timeCap){
+LEFT_FRONT = power - (SensorValue[leftEncoder] - amount);
+LEFT_BACK = power - (SensorValue[leftEncoder] - amount);
+RIGHT_FRONT = power - (SensorValue[rightEncoder] - amount);
+RIGHT_BACK = power - (SensorValue[rightEncoder] - amount);
+wait1Msec(timeCap);
+LEFT_FRONT = 0;
+LEFT_BACK = 0;
+RIGHT_FRONT = 0;
+RIGHT_BACK = 0;
 }
 
 
@@ -174,12 +191,12 @@ void linearMoveSeconds(const string direction, int power){
 //Autonomous Programs
 
 void blueRight(){
-	backwardTime(50, 400);
-	liftArm("up", 100, 2000);
-	forwardTime(40, 500);
-	controlClaw("down" , 50, 2000);
-	backwardTime(50, 500);
-
+forwardExact(50, 100, 1500);
+controlClaw("up", 50, 500);
+turnAmount("right", 50, 100);
+forwardExact(50, 75, 1000);
+controlClaw("up", 50, 500);
+backwardTime(50,500);
 }
 
 void blueLeft(){

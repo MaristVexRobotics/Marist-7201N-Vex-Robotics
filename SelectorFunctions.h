@@ -80,5 +80,5 @@ void runAutonomous(){
 
 void auton(){
 	testSelector();
-		runAutonomous();
+	runAutonomous();
 }
