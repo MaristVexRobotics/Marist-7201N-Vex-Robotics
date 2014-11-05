@@ -1,4 +1,6 @@
 #pragma config(Sensor, in1,    selector,       sensorAnalog)
+#pragma config(Sensor, dgtl1,  rightEncoder,   sensorQuadEncoder)
+#pragma config(Sensor, dgtl3,  leftEncoder,    sensorQuadEncoder)
 #pragma config(Motor,  port1,           backLeft,      tmotorVex393, openLoop)
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port3,           rightLift1,    tmotorVex393, openLoop)
@@ -27,8 +29,8 @@
 
 void pre_auton()
 {
-init();
-  bStopTasksBetweenModes = true;
+	init();
+	bStopTasksBetweenModes = true;
 
 }
 
@@ -36,15 +38,17 @@ init();
 task autonomous()
 {
 	pre_auton();
+<<<<<<< HEAD
   auton();
+=======
+	auton();
+>>>>>>> origin/master
 }
 
 task usercontrol()
 {
-	// User control code here, inside the loop
-
 	while (true)
 	{
-drive();
+		drive();
 	}
 }

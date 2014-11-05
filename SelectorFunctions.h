@@ -78,8 +78,12 @@ void runAutonomous(){
 	}
 }
 
-bool auton(){
+void auton(){
 	testSelector();
+<<<<<<< HEAD
 		runAutonomous();
 		return true;
+=======
+	runAutonomous();
+>>>>>>> origin/master
 }

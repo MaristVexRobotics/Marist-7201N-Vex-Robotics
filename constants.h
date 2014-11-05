@@ -1,10 +1,14 @@
 #pragma config(Sensor, in1,    selector,       sensorAnalog)
+#pragma config(Sensor, dgtl1,  rightEncoder,   sensorQuadEncoder)
+#pragma config(Sensor, dgtl3,  leftEncoder,    sensorQuadEncoder)
 #pragma config(Motor,  port1,           backLeft,      tmotorVex393, openLoop)
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
-#pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
-#pragma config(Motor,  port10,          backRight,     tmotorVex393, openLoop, reversed)
-#pragma config(Motor,  port7,           leftLift2,     tmotorVex393, openLoop, reversed)
-#pragma config(Motor,  port8,           leftLift1,     tmotorVex393, openLoop, reversed)
+#pragma config(Motor,  port3,           rightLift1,    tmotorVex393, openLoop)
+#pragma config(Motor,  port4,           rightLift2,    tmotorVex393, openLoop)
+#pragma config(Motor,  port5,           liftClaw2,     tmotorVex393, openLoop, reversed)
+#pragma config(Motor,  port6,           liftClaw1,     tmotorVex393, openLoop)
+#pragma config(Motor,  port7,           leftLift2,     tmotorVex393, openLoop)
+#pragma config(Motor,  port8,           leftLift1,     tmotorVex393, openLoop)
 #pragma config(Motor,  port9,           frontRight,    tmotorVex393, openLoop, reversed)
 #pragma config(Motor,  port10,          backRight,     tmotorVex393, openLoop, reversed)
 
@@ -34,8 +38,10 @@ Matt Haidet
 #define LIFT_CLAW_MOTOR2 motor[liftClaw2]
 
 
-//Sensors:
+//Sensors: (UnderScore to seperate, camel cased)
 #define Selector SensorValue(selector)
+#define right_Encoder SensorValue[rightEncoder]
+#define left_Encoder SensorValue[leftEncoder]
 
 //Main Controller:
 #define rightXStick vexRT[Ch1]
