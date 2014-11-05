@@ -36,8 +36,7 @@ init();
 task autonomous()
 {
 	pre_auton();
-while(auton() == false){
-}
+  auton();
 }
 
 task usercontrol()

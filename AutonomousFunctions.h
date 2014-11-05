@@ -56,11 +56,11 @@ void liftArm(const string direction, int power, int time) {
 void controlClaw(const string direction, int power, int time) {
 	if(direction == "up") {
 		LIFT_CLAW_MOTOR1  = power;
-		LEFT_LIFT_MOTOR2 = power;
+		LIFT_CLAW_MOTOR2 = power;
 	}
 	if(direction == "down") {
 		LIFT_CLAW_MOTOR1  = -power;
-		LEFT_LIFT_MOTOR2 = -power;
+		LIFT_CLAW_MOTOR2 = -power;
 	}
 	wait1Msec(time);
 	LIFT_CLAW_MOTOR1 = 0;
@@ -178,26 +178,24 @@ void waitForTruth(bool truth){
 //Autonomous Programs
 
 void blueRight(){
-	backwardTime(50, 400);
-	liftArm("up", 100, 2000);
-	forwardTime(40, 500);
-	controlClaw("down" , 50, 2000);
-	backwardTime(50, 500);
-
+backwardTime(127, 1000);
 }
 
 void blueLeft(){
-
+	backwardTime(127, 1000);
 }
 
 void redRight(){
-
+	backwardTime(127, 1000);
 }
 
 void redLeft(){
-	blueRight();
+	backwardTime(127, 1000);
 }
 
 void challenge(){
-
+	liftArm("up", 127, 400);
+	forwardTime(90, 5000);
+	liftArm("down", 40, 500);
+	forwardTime(127, 8000);
 }
