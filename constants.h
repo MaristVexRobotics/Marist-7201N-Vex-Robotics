@@ -38,8 +38,10 @@ Matt Haidet
 #define LIFT_CLAW_MOTOR2 motor[liftClaw2]
 
 
-//Sensors:
+//Sensors: (UnderScore to seperate, camel cased)
 #define Selector SensorValue(selector)
+#define right_Encoder SensorValue[rightEncoder]
+#define left_Encoder SensorValue[leftEncoder]
 
 //Main Controller:
 #define rightXStick vexRT[Ch1]

@@ -26,20 +26,25 @@ int getRightStabilizedValue(){
 }
 
 void updateMarkers(){
-leftEncoderMarker = SensorValue[leftEncoder];
-rightEncoderMarker = SensorValue[rightEncoder];
+	leftEncoderMarker = -left_Encoder;
+	rightEncoderMarker = -right_Encoder;
+
+	if(right_Encoder >= 127 || right_Encoder <= -127 || left_Encoder >=127 || left_Encoder <= -127){
+		left_Encoder = 0;
+		right_Encoder = 0;
+	}
 }
 
 void drive(){
 	updateMarkers();
-	LEFT_BACK = (leftYStick) - (leftUpBumper*127) + (rightUpBumper*127) + (leftUBtn*(40-getLeftStabilizedValue())) - (leftDBtn*(40+getLeftStabilizedValue()));
-	LEFT_FRONT = (leftYStick) + (leftUpBumper*127) - (rightUpBumper*127) + (leftUBtn*(40-getLeftStabilizedValue())) - (leftDBtn*(40+getLeftStabilizedValue()));
-	RIGHT_BACK = (rightYStick) - (rightUpBumper*127) + (leftUpBumper*127) + (leftUBtn*(40-getRightStabilizedValue())) - (leftDBtn*(40+getRightStabilizedValue()));
-	RIGHT_FRONT = (rightYStick) + (rightUpBumper*127) - (leftUpBumper*127) + (leftUBtn*(40-getRightStabilizedValue())) - (leftDBtn*(40+getRightStabilizedValue()));
+	LEFT_BACK = (leftYStick) - (leftUpBumper*127) + (rightUpBumper*127) + (leftUBtn*(127-getLeftStabilizedValue())) - (leftDBtn*(127+getLeftStabilizedValue()));
+	LEFT_FRONT = (leftYStick) + (leftUpBumper*127) - (rightUpBumper*127) + (leftUBtn*(127-getLeftStabilizedValue())) - (leftDBtn*(127+getLeftStabilizedValue()));
+	RIGHT_BACK = (rightYStick) - (rightUpBumper*127) + (leftUpBumper*127) + (leftUBtn*(127-getRightStabilizedValue())) - (leftDBtn*(127+getRightStabilizedValue()));
+	RIGHT_FRONT = (rightYStick) + (rightUpBumper*127) - (leftUpBumper*127) + (leftUBtn*(127-getRightStabilizedValue())) - (leftDBtn*(127+getRightStabilizedValue()));
 	RIGHT_LIFT_MOTOR1 = (rightDBtn*127) - (rightUBtn*127) - (partnerRightYStick);
 	RIGHT_LIFT_MOTOR2 = (rightDBtn*127) - (rightUBtn*127) - (partnerRightYStick);
-	LEFT_LIFT_MOTOR1 = (rightDBtn*127) - (rightUBtn*127) - (partnerRightYStick);
-	LEFT_LIFT_MOTOR2 = (rightDBtn*127) - (rightUBtn*127) - (partnerLeftYStick);
+	LEFT_LIFT_MOTOR1 = (rightDBtn*127) - (rightUBtn*127) + (partnerLeftYStick);
+	LEFT_LIFT_MOTOR2 = (rightDBtn*127) - (rightUBtn*127) + (partnerLeftYStick);
 	LIFT_CLAW_MOTOR1 = (partnerRightUpBumper*100) - (partnerRightDownBumper*100);
 	LIFT_CLAW_MOTOR2 = (partnerRightUpBumper*100) - (partnerRightDownBumper*100);
 	PlayTone(70*leftLBtn, leftLBtn); //Horn

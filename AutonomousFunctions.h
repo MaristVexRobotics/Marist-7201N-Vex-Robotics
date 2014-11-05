@@ -159,9 +159,9 @@ void moveInLineForSeconds(const string direction, int power){
 void turnAmount(const string direction, float amount, int power){
 	turnInPlace(direction, power);
 	if(direction == "left"){
-		waitForTruth(SensorValue[rightEncoder] >= amount && SensorValue[leftEncoder] <= -amount);
+		waitForTruth(right_Encoder >= amount && left_Encoder <= -amount);
 		} else {
-		waitForTruth(SensorValue[rightEncoder] <= -amount && SensorValue[leftEncoder] >= amount);
+		waitForTruth(right_Encoder <= -amount && left_Encoder >= amount);
 	}
 LEFT_FRONT = 0;
 LEFT_BACK = 0;
@@ -169,16 +169,16 @@ RIGHT_FRONT = 0;
 RIGHT_BACK = 0;
 }
 
-void forwardDistance(int power, float amount){
+void forwardDistance(int power, int amount){
 	linearMove(power);
-waitForTruth(SensorValue[rightEncoder] >= amount && SensorValue[leftEncoder] >= amount);
+waitForTruth(right_Encoder >= amount && left_Encoder >= amount);
 }
 
 void forwardExact(int power, float amount, int timeCap){
-LEFT_FRONT = power - (SensorValue[leftEncoder] - amount);
-LEFT_BACK = power - (SensorValue[leftEncoder] - amount);
-RIGHT_FRONT = power - (SensorValue[rightEncoder] - amount);
-RIGHT_BACK = power - (SensorValue[rightEncoder] - amount);
+LEFT_FRONT = power - (left_Encoder - amount);
+LEFT_BACK = power - (left_Encoder - amount);
+RIGHT_FRONT = power - (right_Encoder - amount);
+RIGHT_BACK = power - (right_Encoder - amount);
 wait1Msec(timeCap);
 LEFT_FRONT = 0;
 LEFT_BACK = 0;
