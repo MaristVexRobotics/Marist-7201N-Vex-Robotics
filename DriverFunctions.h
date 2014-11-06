@@ -36,18 +36,18 @@ void updateMarkers(){
 }
 
 void drive(){
-<<<<<<< HEAD
+
 	LEFT_BACK = (leftYStick) + (leftUpBumper*127) - (rightUpBumper*127);
 	LEFT_FRONT = (leftYStick) - (leftUpBumper*127) + (rightUpBumper*127);
 	RIGHT_BACK = (rightYStick) + (rightUpBumper*127) - (leftUpBumper*127);
 	RIGHT_FRONT = (rightYStick) - (rightUpBumper*127) + (leftUpBumper*127);
-=======
+
 	updateMarkers();
 	LEFT_BACK = (leftYStick) - (leftUpBumper*127) + (rightUpBumper*127) + (leftUBtn*(127-getLeftStabilizedValue())) - (leftDBtn*(127+getLeftStabilizedValue()));
 	LEFT_FRONT = (leftYStick) + (leftUpBumper*127) - (rightUpBumper*127) + (leftUBtn*(127-getLeftStabilizedValue())) - (leftDBtn*(127+getLeftStabilizedValue()));
 	RIGHT_BACK = (rightYStick) - (rightUpBumper*127) + (leftUpBumper*127) + (leftUBtn*(127-getRightStabilizedValue())) - (leftDBtn*(127+getRightStabilizedValue()));
 	RIGHT_FRONT = (rightYStick) + (rightUpBumper*127) - (leftUpBumper*127) + (leftUBtn*(127-getRightStabilizedValue())) - (leftDBtn*(127+getRightStabilizedValue()));
->>>>>>> origin/master
+
 	RIGHT_LIFT_MOTOR1 = (rightDBtn*127) - (rightUBtn*127) - (partnerRightYStick);
 	RIGHT_LIFT_MOTOR2 = (rightDBtn*127) - (rightUBtn*127) - (partnerRightYStick);
 	LEFT_LIFT_MOTOR1 = (rightDBtn*127) - (rightUBtn*127) + (partnerLeftYStick);

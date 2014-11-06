@@ -69,11 +69,11 @@ void controlClaw(const string direction, int power, int time) {
 	}
 	if(direction == "down") {
 		LIFT_CLAW_MOTOR1  = -power;
-<<<<<<< HEAD
+
 		LIFT_CLAW_MOTOR2 = -power;
-=======
+
 		LIFT_CLAW_MOTOR2  = -power;
->>>>>>> origin/master
+
 	}
 	wait1Msec(time);
 	LIFT_CLAW_MOTOR1 = 0;
@@ -195,16 +195,14 @@ RIGHT_BACK = 0;
 //Autonomous Programs
 
 void blueRight(){
-<<<<<<< HEAD
 backwardTime(127, 1000);
-=======
 forwardExact(50, 100, 1500);
 controlClaw("up", 50, 500);
 turnAmount("right", 50, 100);
 forwardExact(50, 75, 1000);
 controlClaw("up", 50, 500);
 backwardTime(50,500);
->>>>>>> origin/master
+
 }
 
 void blueLeft(){

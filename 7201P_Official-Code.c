@@ -38,11 +38,10 @@ void pre_auton()
 task autonomous()
 {
 	pre_auton();
-<<<<<<< HEAD
+
   auton();
-=======
-	auton();
->>>>>>> origin/master
+
+
 }
 
 task usercontrol()

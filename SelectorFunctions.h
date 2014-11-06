@@ -80,10 +80,10 @@ void runAutonomous(){
 
 void auton(){
 	testSelector();
-<<<<<<< HEAD
+
 		runAutonomous();
-		return true;
-=======
+		//return true;
+
 	runAutonomous();
->>>>>>> origin/master
+
 }
