@@ -37,7 +37,7 @@ void linearMove(int power){
 	RIGHT_BACK = power;
 	LEFT_FRONT = power;
 	RIGHT_FRONT = power;
-	wait1Msec(1000);
+	//wait1Msec(1000);
 }
 
 //lift arm function for the robot
@@ -214,7 +214,10 @@ void redRight(){
 }
 
 void redLeft(){
-	backwardTime(127, 1000);
+	//backwardTime(127, 1000);
+	forwardTime(111, 500);
+	controlClaw("up", 90, 100);
+	liftArm("up", 127, 300);
 }
 
 void challenge(){
