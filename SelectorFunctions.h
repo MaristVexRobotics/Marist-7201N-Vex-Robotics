@@ -84,6 +84,5 @@ void auton(){
 		runAutonomous();
 		//return true;
 
-	runAutonomous();
 
 }

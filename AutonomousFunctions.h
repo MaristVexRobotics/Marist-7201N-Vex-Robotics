@@ -54,11 +54,11 @@ void liftArm(const string direction, int power, int time) {
 		LEFT_LIFT_MOTOR1 = -power;
 		LEFT_LIFT_MOTOR2 = -power;
 	}
-	wait1Msec(time);
-	RIGHT_LIFT_MOTOR1 = 0;
-	RIGHT_LIFT_MOTOR2 = 0;
-	LEFT_LIFT_MOTOR1 = 0;
-	LEFT_LIFT_MOTOR2 = 0;
+	//wait1Msec(time);
+	//RIGHT_LIFT_MOTOR1 = 0;
+	//RIGHT_LIFT_MOTOR2 = 0;
+	//LEFT_LIFT_MOTOR1 = 0;
+	//LEFT_LIFT_MOTOR2 = 0;
 }
 
 //lift claw function for the claw
@@ -72,7 +72,7 @@ void controlClaw(const string direction, int power, int time) {
 
 		LIFT_CLAW_MOTOR2 = -power;
 
-		LIFT_CLAW_MOTOR2  = -power;
+		//LIFT_CLAW_MOTOR2  = -power;
 
 	}
 	wait1Msec(time);
@@ -141,17 +141,22 @@ void rightMoveTime(int power, int mSecs) {
 void turnForSeconds(const string direction, float seconds, int power){
 
 	if(direction == "right") {
-		LEFT_BACK = -power;
-		LEFT_FRONT = -power;
-		RIGHT_FRONT = power;
-		RIGHT_BACK = power;
-	}
-	else if(direction == "left") {
 		LEFT_BACK = power;
 		LEFT_FRONT = power;
 		RIGHT_FRONT = -power;
 		RIGHT_BACK = -power;
 	}
+ if(direction == "left") {
+		LEFT_BACK = -power;
+		LEFT_FRONT = -power;
+		RIGHT_FRONT = power;
+		RIGHT_BACK = power;
+	}
+	wait1Msec(seconds * 1000);
+		LEFT_BACK = 0;
+		LEFT_FRONT = 0;
+		RIGHT_FRONT = 0;
+		RIGHT_BACK = 0;
 }
 
 void moveInLineForSeconds(const string direction, int power){
@@ -195,34 +200,69 @@ RIGHT_BACK = 0;
 //Autonomous Programs
 
 void blueRight(){
-backwardTime(127, 1000);
-forwardExact(50, 100, 1500);
-controlClaw("up", 50, 500);
-turnAmount("right", 50, 100);
-forwardExact(50, 75, 1000);
-controlClaw("up", 50, 500);
-backwardTime(50,500);
+//backwardTime(127, 1000);
+//forwardExact(50, 100, 1500);
+//controlClaw("up", 50, 500);
+//turnAmount("right", 50, 100);
+//forwardExact(50, 75, 1000);
+//controlClaw("up", 50, 500);
+//backwardTime(50,500);
+
+	controlClaw("down", -100, 400);
+	wait1Msec(1000);
+	forwardTime(127, 1000);
+	controlClaw("up", -100, 400);
+	turnForSeconds("left", 1.35, 100);
+	forwardTime(127, 450);
+	controlClaw("down", -100, 400);
+	backwardTime(127, 500);
 
 }
 
 void blueLeft(){
-	backwardTime(127, 1000);
+//	backwardTime(127, 1000);
+//forwardTime(127, 1000);
+	controlClaw("down", -100, 400);
+	wait1Msec(1000);
+	forwardTime(127, 1000);
+	controlClaw("up", -100, 400);
+	turnForSeconds("right", 1.35, 100);
+	forwardTime(127, 450);
+	controlClaw("down", -100, 400);
+	backwardTime(127, 500);
 }
 
 void redRight(){
-	backwardTime(127, 1000);
+//	backwardTime(127, 1000);
+//forwardTime(127, 1000);
+	controlClaw("down", -100, 400);
+	wait1Msec(1000);
+	forwardTime(127, 1000);
+	controlClaw("up", -100, 400);
+	turnForSeconds("left", 1.35, 100);
+	forwardTime(127, 450);
+	controlClaw("down", -100, 400);
+	backwardTime(127, 500);
+
 }
 
 void redLeft(){
-	//backwardTime(127, 1000);
-	forwardTime(111, 500);
-	controlClaw("up", 90, 100);
-	liftArm("up", 127, 300);
+//	//backwardTime(127, 1000
+	controlClaw("down", -100, 400);
+	wait1Msec(1000);
+	forwardTime(127, 1000);
+	controlClaw("up", -100, 400);
+	turnForSeconds("right", 1.35, 100);
+	forwardTime(127, 450);
+	controlClaw("down", -100, 400);
+	backwardTime(127, 500);
+
 }
 
 void challenge(){
-	liftArm("up", 127, 400);
-	forwardTime(90, 5000);
-	liftArm("down", 40, 500);
-	forwardTime(127, 8000);
+	forwardTime(127, 1000);
+//	liftArm("up", 127, 400);
+//	forwardTime(10, 5000);
+//	liftArm("down", 40, 500);
+//	forwardTime(127, 8000);
 }
