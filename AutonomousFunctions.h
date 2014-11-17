@@ -208,12 +208,12 @@ void blueRight(){
 //controlClaw("up", 50, 500);
 //backwardTime(50,500);
 
-	controlClaw("down", -100, 400);
+	controlClaw("down", -100, 550);
 	wait1Msec(1000);
 	forwardTime(127, 1000);
 	controlClaw("up", -100, 400);
 	turnForSeconds("left", 1.35, 100);
-	forwardTime(127, 450);
+	forwardTime(127, 500);
 	controlClaw("down", -100, 400);
 	backwardTime(127, 500);
 
@@ -222,12 +222,12 @@ void blueRight(){
 void blueLeft(){
 //	backwardTime(127, 1000);
 //forwardTime(127, 1000);
-	controlClaw("down", -100, 400);
+	controlClaw("down", -100, 550);
 	wait1Msec(1000);
 	forwardTime(127, 1000);
 	controlClaw("up", -100, 400);
 	turnForSeconds("right", 1.35, 100);
-	forwardTime(127, 450);
+	forwardTime(127, 500);
 	controlClaw("down", -100, 400);
 	backwardTime(127, 500);
 }
@@ -235,12 +235,12 @@ void blueLeft(){
 void redRight(){
 //	backwardTime(127, 1000);
 //forwardTime(127, 1000);
-	controlClaw("down", -100, 400);
+	controlClaw("down", -100, 550);
 	wait1Msec(1000);
 	forwardTime(127, 1000);
 	controlClaw("up", -100, 400);
 	turnForSeconds("left", 1.35, 100);
-	forwardTime(127, 450);
+	forwardTime(127, 500);
 	controlClaw("down", -100, 400);
 	backwardTime(127, 500);
 
@@ -248,12 +248,12 @@ void redRight(){
 
 void redLeft(){
 //	//backwardTime(127, 1000
-	controlClaw("down", -100, 400);
+	controlClaw("down", -100, 550);
 	wait1Msec(1000);
 	forwardTime(127, 1000);
 	controlClaw("up", -100, 400);
 	turnForSeconds("right", 1.35, 100);
-	forwardTime(127, 450);
+	forwardTime(127, 500);
 	controlClaw("down", -100, 400);
 	backwardTime(127, 500);
 
