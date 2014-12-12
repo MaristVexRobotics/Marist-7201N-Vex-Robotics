@@ -86,8 +86,8 @@ void runAutonomous(){
 void auton(){
 	testSelector();
 
-		runAutonomous();
-		//return true;
+	runAutonomous();
+	//return true;
 
 
 }

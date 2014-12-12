@@ -31,22 +31,17 @@
 
 #include "Vex_Competition_Includes.c"   //Main competition background code...do not modify!
 
-
 void pre_auton()
 {
 	init();
 	bStopTasksBetweenModes = true;
-
 }
 
 
 task autonomous()
 {
 	pre_auton();
-
-  auton();
-
-
+	auton();
 }
 
 task usercontrol()
