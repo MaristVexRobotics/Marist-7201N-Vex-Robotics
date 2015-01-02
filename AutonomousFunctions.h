@@ -1,6 +1,7 @@
 #pragma config(Sensor, in1,    selector,       sensorAnalog)
 #pragma config(Sensor, dgtl1,  rightEncoder,   sensorQuadEncoder)
 #pragma config(Sensor, dgtl3,  leftEncoder,    sensorQuadEncoder)
+#pragma config(UART_Usage, UART2, uartVEXLCD, baudRate19200, IOPins, None, None)
 #pragma config(Motor,  port1,           backLeft,      tmotorVex393, openLoop)
 #pragma config(Motor,  port2,           frontLeft,     tmotorVex393, openLoop)
 #pragma config(Motor,  port3,           rightLift1,    tmotorVex393, openLoop)
@@ -184,10 +185,13 @@ waitForTruth(right_Encoder >= amount && left_Encoder >= amount);
 }
 
 void forwardExact(int power, float amount, int timeCap){
-LEFT_FRONT = power - (left_Encoder - amount);
-LEFT_BACK = power - (left_Encoder - amount);
-RIGHT_FRONT = power - (right_Encoder - amount);
-RIGHT_BACK = power - (right_Encoder - amount);
+left_Encoder = 0;
+right_Encoder = 0;
+LEFT_FRONT = (amount-left_Encoder);
+LEFT_BACK = (amount-left_Encoder);
+RIGHT_FRONT = (amount-right_Encoder);
+RIGHT_BACK = (amount-right_Encoder);
+
 wait1Msec(timeCap);
 LEFT_FRONT = 0;
 LEFT_BACK = 0;
@@ -200,14 +204,6 @@ RIGHT_BACK = 0;
 //Autonomous Programs
 
 void blueRight(){
-//backwardTime(127, 1000);
-//forwardExact(50, 100, 1500);
-//controlClaw("up", 50, 500);
-//turnAmount("right", 50, 100);
-//forwardExact(50, 75, 1000);
-//controlClaw("up", 50, 500);
-//backwardTime(50,500);
-
 	controlClaw("down", -100, 550);
 	wait1Msec(1000);
 	forwardTime(127, 1000);
@@ -260,9 +256,9 @@ void redLeft(){
 }
 
 void challenge(){
-	forwardTime(127, 1000);
-//	liftArm("up", 127, 400);
-//	forwardTime(10, 5000);
-//	liftArm("down", 40, 500);
-//	forwardTime(127, 8000);
+
+forwardExact(80, 00.0, 600);
+
+
+
 }
