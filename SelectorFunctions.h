@@ -1,4 +1,9 @@
 #pragma config(Sensor, in1,    selector,       sensorAnalog)
+#pragma config(Sensor, in2,    selection5,     sensorAnalog)
+#pragma config(Sensor, in3,    selection4,     sensorAnalog)
+#pragma config(Sensor, in4,    selection2,     sensorAnalog)
+#pragma config(Sensor, in5,    selection3,     sensorAnalog)
+#pragma config(Sensor, in6,    selection1,     sensorAnalog)
 #pragma config(UART_Usage, UART2, uartVEXLCD, baudRate19200, IOPins, None, None)
 #include "AutonomousFunctions.h"
 
@@ -22,13 +27,13 @@ void init(){
 }
 
 int getSelectionNumber(){
-	if(Selector > 3915){
+	if(selection1 == 0){
 		return 1;
-		} else if(Selector <= 3915 && Selector > 3340){
+		} else if(selection2 == 0){
 		return 2;
-		} else if(Selector <= 3340 && Selector > 2605){
+		} else if(selection3 == 0){
 		return 3;
-		} else if(Selector <= 2605 && Selector > 2291){
+		} else if(selection4 == 0){
 		return 4;
 		} else {
 		return 5;
@@ -81,8 +86,8 @@ void runAutonomous(){
 void auton(){
 	testSelector();
 
-		runAutonomous();
-		//return true;
+	runAutonomous();
+	//return true;
 
 
 }

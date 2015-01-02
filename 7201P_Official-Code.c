@@ -1,4 +1,9 @@
 #pragma config(Sensor, in1,    selector,       sensorAnalog)
+#pragma config(Sensor, in2,    selection5,     sensorAnalog)
+#pragma config(Sensor, in3,    selection4,     sensorAnalog)
+#pragma config(Sensor, in4,    selection2,     sensorAnalog)
+#pragma config(Sensor, in5,    selection3,     sensorAnalog)
+#pragma config(Sensor, in6,    selection1,     sensorAnalog)
 #pragma config(Sensor, dgtl1,  rightEncoder,   sensorQuadEncoder)
 #pragma config(Sensor, dgtl3,  leftEncoder,    sensorQuadEncoder)
 #pragma config(Motor,  port1,           backLeft,      tmotorVex393, openLoop)
@@ -26,22 +31,17 @@
 
 #include "Vex_Competition_Includes.c"   //Main competition background code...do not modify!
 
-
 void pre_auton()
 {
 	init();
 	bStopTasksBetweenModes = true;
-
 }
 
 
 task autonomous()
 {
 	pre_auton();
-
-  auton();
-
-
+	auton();
 }
 
 task usercontrol()
