@@ -27,15 +27,19 @@ void init(){
 }
 
 int getSelectionNumber(){
-	if(selection1 == 0){
+	if(selection1 < 10){
 		return 1;
-		} else if(selection2 == 0){
+		}
+		if(selection2 < 10){
 		return 2;
-		} else if(selection3 == 0){
+		}
+		if(selection3 < 10){
 		return 3;
-		} else if(selection4 == 0){
+		}
+		if(selection4 < 10){
 		return 4;
-		} else {
+		}
+		if(selection5<10) {
 		return 5;
 	}
 }

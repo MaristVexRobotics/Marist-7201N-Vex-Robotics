@@ -48,7 +48,7 @@ void drive(){
 	RIGHT_LIFT_MOTOR2 = (rightDBtn*127) - (rightUBtn*127) - (partnerRightYStick);
 	LEFT_LIFT_MOTOR1 = (rightDBtn*127) - (rightUBtn*127) + (partnerLeftYStick);
 	LEFT_LIFT_MOTOR2 = (rightDBtn*127) - (rightUBtn*127) + (partnerLeftYStick);
-	LIFT_CLAW_MOTOR1 = -(partnerRightUpBumper*100) + (partnerRightDownBumper*100);
-	LIFT_CLAW_MOTOR2 = -(partnerRightUpBumper*100) + (partnerRightDownBumper*100);
+	LIFT_CLAW_MOTOR1 = (partnerRightUpBumper*100) - (partnerRightDownBumper*100);
+	LIFT_CLAW_MOTOR2 = (partnerRightUpBumper*100) - (partnerRightDownBumper*100);
 	PlayTone(70*leftRBtn, leftRBtn); //Horn
 }

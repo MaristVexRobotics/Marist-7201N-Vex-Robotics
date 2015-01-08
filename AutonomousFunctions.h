@@ -64,12 +64,12 @@ void liftArm(const string direction, int power, int time) {
 //lift claw function for the claw
 void controlClaw(const string direction, int power, int time) {
 	if(direction == "up") {
-		LIFT_CLAW_MOTOR1  = power;
-		LIFT_CLAW_MOTOR2 = power;
-	}
-	if(direction == "down") {
 		LIFT_CLAW_MOTOR1  = -power;
 		LIFT_CLAW_MOTOR2 = -power;
+	}
+	if(direction == "down") {
+		LIFT_CLAW_MOTOR1  = power;
+		LIFT_CLAW_MOTOR2 = power;
 	}
 	wait1Msec(time);
 	LIFT_CLAW_MOTOR1 = 0;
@@ -143,12 +143,12 @@ void turnForSeconds(const string direction, float seconds, int power){
 		RIGHT_BACK = -power;
 	}
 	if(direction == "left") {
-		LEFT_BACK = -power;
+			LEFT_BACK = -power;
 		LEFT_FRONT = -power;
 		RIGHT_FRONT = power;
 		RIGHT_BACK = power;
 	}
-	wait1Msec(1000);
+	wait1Msec(seconds*1000 );
 	LEFT_BACK = 0;
 	LEFT_FRONT = 0;
 	RIGHT_FRONT = 0;
@@ -172,7 +172,7 @@ void forwardDistance(int power, int amount){
 }
 
 void forwardExact(int power, float amount, int timeCap){
-<<<<<<< HEAD
+
 left_Encoder = 0;
 right_Encoder = 0;
 LEFT_FRONT = (amount-left_Encoder);
@@ -185,14 +185,14 @@ LEFT_FRONT = 0;
 LEFT_BACK = 0;
 RIGHT_FRONT = 0;
 RIGHT_BACK = 0;
-=======
+
 	LEFT_FRONT = power - (left_Encoder - amount);
 	LEFT_BACK = power - (left_Encoder - amount);
 	RIGHT_FRONT = power - (right_Encoder - amount);
 	RIGHT_BACK = power - (right_Encoder - amount);
 	wait1Msec(timeCap);
 	linearMove(0);
->>>>>>> origin/master
+
 }
 
 
@@ -200,25 +200,23 @@ RIGHT_BACK = 0;
 //Autonomous Programs
 
 void blueRight(){
-<<<<<<< HEAD
-=======
+
 	//backwardTime(127, 1000);
 	//forwardExact(50, 100, 1500);
-	//controlClaw("up", 50, 500);
+	// controlClaw("up", 50, 500);
 	//turnAmount("right", 50, 100);
 	//forwardExact(50, 75, 1000);
 	//controlClaw("up", 50, 500);
 	//backwardTime(50,500);
 
->>>>>>> origin/master
-	controlClaw("down", -100, 550);
-	wait1Msec(1000);
-	forwardTime(127, 1000);
-	controlClaw("up", -100, 400);
-	turnForSeconds("left", 1.35, 100);
-	forwardTime(127, 500);
-	controlClaw("down", -100, 400);
-	backwardTime(127, 500);
+	//controlClaw("down", -100, 550);
+	//wait1Msec(1000);
+	//forwardTime(127, 1000);
+	//controlClaw("up", -100, 400);
+	//turnForSeconds("right", 1.35, 100);
+	//forwardTime(127, 500);
+	//controlClaw("down", -100, 400);
+	//backwardTime(127, 500);
 
 }
 
@@ -238,42 +236,43 @@ void blueLeft(){
 void redRight(){
 	//	backwardTime(127, 1000);
 	//forwardTime(127, 1000);
-	controlClaw("down", -100, 550);
-	wait1Msec(1000);
-	forwardTime(127, 1000);
-	controlClaw("up", -100, 400);
-	turnForSeconds("left", 1.35, 100);
-	forwardTime(127, 500);
-	controlClaw("down", -100, 400);
-	backwardTime(127, 500);
+	//controlClaw("down", -100, 550);
+	//wait1Msec(1000);
+	//forwardTime(127, 1000);
+	//controlClaw("up", -100, 400);
+	//turnForSeconds("left", 1.35, 100);
+	//forwardTime(127, 500);
+	//controlClaw("down", -100, 400);
+	//backwardTime(127, 500);
 
 }
 
 void redLeft(){
 	//	//backwardTime(127, 1000
-	controlClaw("down", -100, 550);
-	wait1Msec(1000);
-	forwardTime(127, 1000);
-	controlClaw("up", -100, 400);
-	turnForSeconds("right", 1.35, 100);
-	forwardTime(127, 500);
-	controlClaw("down", -100, 400);
-	backwardTime(127, 500);
+	//controlClaw("down", -100, 535);
+	//wait1Msec(1000);
+	//forwardTime(127, 1000);
+	//controlClaw("up", -100, 400);
+	// turnForSeconds("right", 2.85, 100);
+	//forwardTime(127, 500);
+	//controlClaw("down", -100, 400);
+	//backwardTime(127, 550);
+	//controlClaw("up", 90, 100);
 
 }
 
 void challenge(){
-<<<<<<< HEAD
+
 
 forwardExact(80, 00.0, 600);
 
 
 
-=======
+
 	forwardTime(127, 1000);
 	//	liftArm("up", 127, 400);
 	//	forwardTime(10, 5000);
 	//	liftArm("down", 40, 500);
 	//	forwardTime(127, 8000);
->>>>>>> origin/master
+
 }
