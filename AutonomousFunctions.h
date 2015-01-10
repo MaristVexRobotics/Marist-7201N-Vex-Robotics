@@ -209,14 +209,14 @@ void blueRight(){
 	//controlClaw("up", 50, 500);
 	//backwardTime(50,500);
 
-	//controlClaw("down", -100, 550);
-	//wait1Msec(1000);
-	//forwardTime(127, 1000);
-	//controlClaw("up", -100, 400);
-	//turnForSeconds("right", 1.35, 100);
-	//forwardTime(127, 500);
-	//controlClaw("down", -100, 400);
-	//backwardTime(127, 500);
+	controlClaw("down", -100, 550);
+	wait1Msec(1000);
+	forwardTime(127, 1000);
+	controlClaw("up", -100, 400);
+	turnForSeconds("left", 1.30, 100);
+	forwardTime(127, 600);
+	controlClaw("down", -100, 400);
+	backwardTime(127, 500);
 
 }
 
@@ -227,37 +227,36 @@ void blueLeft(){
 	wait1Msec(1000);
 	forwardTime(127, 1000);
 	controlClaw("up", -100, 400);
-	turnForSeconds("right", 1.35, 100);
-	forwardTime(127, 500);
+	turnForSeconds("right", 1.30, 100);
+	forwardTime(127, 600);
 	controlClaw("down", -100, 400);
 	backwardTime(127, 500);
 }
 
 void redRight(){
-	//	backwardTime(127, 1000);
-	//forwardTime(127, 1000);
-	//controlClaw("down", -100, 550);
-	//wait1Msec(1000);
-	//forwardTime(127, 1000);
-	//controlClaw("up", -100, 400);
-	//turnForSeconds("left", 1.35, 100);
-	//forwardTime(127, 500);
-	//controlClaw("down", -100, 400);
-	//backwardTime(127, 500);
+		//backwardTime(127, 1000);
+	controlClaw("down", -100, 550);
+	wait1Msec(1000);
+	forwardTime(127, 1000);
+	controlClaw("up", -100, 400);
+	turnForSeconds("left", 1.30, 100);
+	forwardTime(127, 600);
+	controlClaw("down", -100, 400);
+	backwardTime(127, 500);
 
 }
 
 void redLeft(){
-	//	//backwardTime(127, 1000
-	//controlClaw("down", -100, 535);
-	//wait1Msec(1000);
-	//forwardTime(127, 1000);
-	//controlClaw("up", -100, 400);
-	// turnForSeconds("right", 2.85, 100);
-	//forwardTime(127, 500);
-	//controlClaw("down", -100, 400);
-	//backwardTime(127, 550);
-	//controlClaw("up", 90, 100);
+		//backwardTime(127, 1000
+	controlClaw("down", -100, 535);
+	wait1Msec(1000);
+	forwardTime(127, 1000);
+	controlClaw("up", -100, 400);
+	turnForSeconds("right", 1.30, 100);
+	forwardTime(127, 500);
+	controlClaw("down", -100, 400);
+	backwardTime(127, 600);
+	controlClaw("up", 90, 100);
 
 }
 
