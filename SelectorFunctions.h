@@ -27,21 +27,22 @@ void init(){
 }
 
 int getSelectionNumber(){
-	if(selection1 < 10){
+	if(SensorValue(selection1) == 0){
 		return 1;
 		}
-		if(selection2 < 10){
+		if(SensorValue(selection2) == 0){
 		return 2;
 		}
-		if(selection3 < 10){
+		if(SensorValue(selection3) == 0){
 		return 3;
 		}
-		if(selection4 < 10){
+		if(SensorValue(selection4) == 0){
 		return 4;
 		}
-		if(selection5<10) {
+		if(SensorValue(selection5) == 0) {
 		return 5;
 	}
+	return 0;
 }
 
 bool hasSelectionChanged(){
@@ -63,6 +64,10 @@ void testSelector(){
 
 void runAutonomous(){
 	switch(getSelectionNumber()){
+
+	case 0:
+	//do nothing
+	break;
 
 	case 1:
 		blueLeft();
