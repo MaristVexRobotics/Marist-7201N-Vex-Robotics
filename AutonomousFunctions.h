@@ -68,8 +68,8 @@ void controlClaw(const string direction, int power, int time) {
 		LIFT_CLAW_MOTOR2 = -power;
 	}
 	if(direction == "down") {
-		LIFT_CLAW_MOTOR1  = power;
-		LIFT_CLAW_MOTOR2 = power;
+		LIFT_CLAW_MOTOR1  = -power;
+		LIFT_CLAW_MOTOR2 = -power;
 	}
 	wait1Msec(time);
 	LIFT_CLAW_MOTOR1 = 0;
@@ -212,7 +212,7 @@ void blueRight(){
 	controlClaw("down", -100, 550);
 	wait1Msec(1000);
 	forwardTime(127, 1000);
-	controlClaw("up", -100, 400);
+	controlClaw("up", -100, 500);
 	turnForSeconds("left", 1.30, 100);
 	forwardTime(127, 600);
 	controlClaw("down", -100, 400);
@@ -226,7 +226,7 @@ void blueLeft(){
 	controlClaw("down", -100, 550);
 	wait1Msec(1000);
 	forwardTime(127, 1000);
-	controlClaw("up", -100, 400);
+	controlClaw("up", -100, 500);
 	turnForSeconds("right", 1.30, 100);
 	forwardTime(127, 600);
 	controlClaw("down", -100, 400);
@@ -238,7 +238,7 @@ void redRight(){
 	controlClaw("down", -100, 550);
 	wait1Msec(1000);
 	forwardTime(127, 1000);
-	controlClaw("up", -100, 400);
+	controlClaw("up", -100, 500);
 	turnForSeconds("left", 1.30, 100);
 	forwardTime(127, 600);
 	controlClaw("down", -100, 400);
@@ -251,7 +251,7 @@ void redLeft(){
 	controlClaw("down", -100, 535);
 	wait1Msec(1000);
 	forwardTime(127, 1000);
-	controlClaw("up", -100, 400);
+	controlClaw("up", -100, 500);
 	turnForSeconds("right", 1.30, 100);
 	forwardTime(127, 500);
 	controlClaw("down", -100, 400);
