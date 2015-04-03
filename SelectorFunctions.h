@@ -29,17 +29,17 @@ void init(){
 int getSelectionNumber(){
 	if(SensorValue(selection1) == 0){
 		return 1;
-		}
-		if(SensorValue(selection2) == 0){
+	}
+	if(SensorValue(selection2) == 0){
 		return 2;
-		}
-		if(SensorValue(selection3) == 0){
+	}
+	if(SensorValue(selection3) == 0){
 		return 3;
-		}
-		if(SensorValue(selection4) == 0){
+	}
+	if(SensorValue(selection4) == 0){
 		return 4;
-		}
-		if(SensorValue(selection5) == 0) {
+	}
+	if(SensorValue(selection5) == 0) {
 		return 5;
 	}
 	return 0;
@@ -66,8 +66,8 @@ void runAutonomous(){
 	switch(getSelectionNumber()){
 
 	case 0:
-	//do nothing
-	break;
+		//do nothing
+		break;
 
 	case 1:
 		blueLeft();
