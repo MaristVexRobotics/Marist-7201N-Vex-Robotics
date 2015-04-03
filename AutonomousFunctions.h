@@ -1,4 +1,5 @@
 #pragma config(Sensor, in1,    selector,       sensorAnalog)
+#pragma config(Sensor, in1,    selector,       sensorAnalog)
 #pragma config(Sensor, I2C_1,  rightEncoder,   sensorQuadEncoderOnI2CPort,    , AutoAssign)
 #pragma config(Sensor, I2C_2,  leftEncoder,    sensorQuadEncoderOnI2CPort,    , AutoAssign)
 #pragma config(UART_Usage, UART2, uartVEXLCD, baudRate19200, IOPins, None, None)
@@ -18,7 +19,6 @@ void waitForTruth(bool truth){
 	while(!truth){
 		wait1Msec(1);
 	}
-
 }
 
 void resetEncoders(){
