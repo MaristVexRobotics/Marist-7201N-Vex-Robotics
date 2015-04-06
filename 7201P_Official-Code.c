@@ -49,9 +49,8 @@ task usercontrol()
 {
 	while (true)
 	{
-	//	PlaySoundFile("sound.wav");
-	//	drive();
-	redRight();
+	PlaySoundFile("sound.wav");
+	drive();
 	}
 
 }
