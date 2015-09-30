@@ -19,6 +19,14 @@ string programNames[6] = {
 	"5. Challenge"
 };
 
+string errors[5] = {
+	"Controller Error  ",
+	"Low Battery   ",
+	"Low Backup   ",
+	"Wiring Malfunction  ",
+	"All Systems Go  "
+};
+
 
 void init(){
 	clearLCDLine(0);
@@ -89,6 +97,20 @@ void runAutonomous(){
 		challenge();
 		break;
 
+	}
+}
+
+int runDiagnostics(){
+	if(batteryLevel <= 2000){
+		return 1;
+		} else if(BackupBatteryLevel <= 4){
+		return 2;
+		} else if(false){
+		return 0;
+		} else if(kNumbAnalogSensors < 6 || kNumbOfRealServos < 10){
+		return 3;
+		} else {
+		return 4;
 	}
 }
 

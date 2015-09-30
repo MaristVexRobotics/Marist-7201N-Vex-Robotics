@@ -32,9 +32,14 @@
 
 #include "Vex_Competition_Includes.c"   //Main competition background code...do not modify!
 
+
 void pre_auton()
 {
+		clearLCDLine(0);
+		clearLCDLine(1);
 	init();
+	displayLCDString(0, 0, "7201N Official");
+	displayLCDString(1, 0, errors[runDiagnostics()]);
 	bStopTasksBetweenModes = true;
 }
 
@@ -47,10 +52,14 @@ task autonomous()
 
 task usercontrol()
 {
+	clearLCDLine(0);
+	clearLCDLine(1);
 	while (true)
 	{
-	PlaySoundFile("sound.wav");
-	drive();
+		displayLCDString(0, 0, "7201N Official  ");
+		displayLCDString(1, 0, errors[runDiagnostics()]);
+		PlaySoundFile("sound.wav");
+		drive();
 	}
 
 }
