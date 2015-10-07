@@ -148,7 +148,7 @@ void strafeLeft(int power, int tick){
 	linearMove(0);
 }
 
-void stafeRight(int power, int tick){
+void strafeRight(int power, int tick){
 	lateralMove("right", power);
 	wait1Msec(tick);
 	linearMove(0);
